@@ -1,0 +1,27 @@
+.suggestionList {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 0 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.suggestionItem {
+  text-align: left;
+  padding: 5px 0;
+  font-size: 14px;
+  color: black;
+  cursor: pointer;
+}
+.plane {
+  margin-right: 15px;
+}
+
+.suggestionItem:hover {
+  background-color: rgb(255, 248, 220);
+}

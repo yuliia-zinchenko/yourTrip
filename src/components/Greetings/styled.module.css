@@ -1,0 +1,23 @@
+.title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.button {
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.57);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}

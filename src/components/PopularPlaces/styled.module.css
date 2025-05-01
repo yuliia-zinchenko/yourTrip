@@ -1,0 +1,59 @@
+.section {
+  background-color: #564d41; /*можливо світліше*/
+  width: 100%;
+  padding: 2.5rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.card {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  background-color: #796f61;
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cardImage {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.cardTitle {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  color: rgb(255, 248, 220);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow {
+  /* font-size: 1.5rem; */
+  stroke-width: 5;
+  margin-left: 10px;
+}

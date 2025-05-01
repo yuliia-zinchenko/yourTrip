@@ -1,0 +1,46 @@
+.wrapper {
+  width: 100%;
+  background-color: #fffbf5;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #3e372d;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #3e372d;
+  font-weight: bold;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.step {
+  font-size: 1.6rem;
+  margin: 2em;
+  font-weight: 600;
+}
+
+.step:nth-child(even) {
+  grid-column: 1 / 2;
+  text-align: left;
+}
+
+.step:nth-child(odd) {
+  grid-column: 2 / 3;
+  text-align: right;
+}
+
+.stepLink {
+  color: #3e372d;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.stepLink:hover {
+  border-color: #3e372d;
+  color: #6d5f4d;
+}
