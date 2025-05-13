@@ -1,0 +1,48 @@
+.completedTripContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+  margin-bottom: 30px;
+}
+.tripImage {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+}
+
+.tripImageImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.tripInfo {
+  flex: 1;
+}
+
+.tripTitle {
+  font-size: 1.5rem;
+  color: #666;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tripLabel {
+  background-color: #8ab58c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  display: inline-block;
+}

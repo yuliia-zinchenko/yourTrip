@@ -1,6 +1,6 @@
 import { Navigation } from "./Navigation";
 import { AuthNav } from "./AuthNav";
-// import { UserNav } from "./UserNav";
+import { UserNav } from "./UserNav";
 
 import styles from "./styled.module.css";
 
@@ -10,7 +10,7 @@ export const AppBar = () => {
       <div className={styles.container}>
         <Navigation />
         <AuthNav />
-        {/* <UserNav /> */}
+        <UserNav />
       </div>
     </header>
   );

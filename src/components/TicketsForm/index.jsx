@@ -5,8 +5,11 @@ import { ReactComponent as Arrow } from "../../icons/arrow-down-up.svg";
 import { useGetSuggestionsQuery } from "../../redux/flights/locationsApi";
 import { useDebounce } from "../../hooks/useDebounce";
 import { SuggestionList } from "../SuggestionList";
+import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
 
 export const TicketsForm = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [destination, setDestination] = useState("");
   const [date, setDate] = useState("");
   const [origin, setOrigin] = useState("");
@@ -17,6 +20,13 @@ export const TicketsForm = () => {
     origin: "",
     travellers: "",
   });
+
+  useEffect(() => {
+    setDestination(searchParams.get("destination") || "");
+    setOrigin(searchParams.get("origin") || "");
+    setDate(searchParams.get("date") || "");
+    setTravellers(searchParams.get("travellers") || "");
+  }, [searchParams]);
 
   const [showDest, setShowDest] = useState(false);
   const [showOrigin, setShowOrigin] = useState(false);
@@ -40,6 +50,12 @@ export const TicketsForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSearchParams({
+      origin: origin,
+      destination: destination,
+      date: date,
+      travellers: travellers,
+    });
 
     let valid = true;
     const newErrors = { destination: "", date: "", origin: "", travellers: "" };
@@ -85,13 +101,16 @@ export const TicketsForm = () => {
   };
 
   const handleDestinationChange = (e) => {
+    const value = e.target.value;
     setDestination(e.target.value);
-    setShowDest(true);
+    setShowDest(value.length > 0);
   };
   const handleDateChange = (e) => setDate(e.target.value);
+
   const handleOriginChange = (e) => {
+    const value = e.target.value;
     setOrigin(e.target.value);
-    setShowOrigin(true);
+    setShowOrigin(value.length > 0);
   };
   const handleTravellersChange = (e) => setTravellers(e.target.value);
 

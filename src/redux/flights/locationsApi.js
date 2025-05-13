@@ -16,16 +16,23 @@ async function fetchAccessToken() {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: new URLSearchParams({
-        client_id: "lYISkqEjLGpkzvNsdwpmAhPrkkHKcpGF",
-        client_secret: "7B2GZ4YGJFF8Vi3d",
+        client_id: process.env.REACT_APP_CLIENT_ID,
+        client_secret: process.env.REACT_APP_CLIENT_SECRET,
         grant_type: "client_credentials",
       }),
     }
   );
   const data = await response.json();
+  console.log(
+    "client_id:",
+    process.env.REACT_APP_CLIENT_ID,
+    "client_secret:",
+    process.env.REACT_APP_CLIENT_SECRET
+  );
 
   accessToken = data.access_token;
   tokenExpiryTime = Date.now() + 3600 * 1000;
+  // console.log("Access Token:", accessToken); // додай це
 
   return accessToken;
 }
@@ -36,6 +43,7 @@ export const locationsApi = createApi({
     baseUrl: "https://test.api.amadeus.com/v1/reference-data/locations",
     prepareHeaders: async (headers) => {
       const token = await fetchAccessToken();
+      // console.log(token);
       headers.set("Authorization", `Bearer ${token}`);
       return headers;
     },
