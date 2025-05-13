@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://192.168.0.103:7271/api",
+    baseUrl: "https://192.168.0.103:7271/api",
     withCredentials: true,
     prepareHeaders: (headers, { getState }) => {
       const rawToken = getState().auth.token;
@@ -28,7 +28,6 @@ export const authApi = createApi({
         url: "/Auth/login",
         method: "POST",
         body: credentials,
-        withCredentials: true,
       }),
     }),
     getCurrentUser: builder.query({
