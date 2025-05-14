@@ -62,6 +62,9 @@ export const RegisterForm = ({ closeModal }) => {
             &times;
           </button>
         </div>
+        <p className={css.paragraph}>
+          You'll need to confirm your email address
+        </p>
         <hr />
         <label className={css.label}>
           Email

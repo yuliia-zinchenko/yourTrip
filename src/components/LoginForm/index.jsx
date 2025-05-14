@@ -4,11 +4,13 @@ import { useLoginMutation } from "../../redux/auth/authApi";
 import { validateLogin } from "../../utils/validateLogin";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "../../redux/auth/authSlice";
+import { useNavigate } from "react-router-dom";
 
-export const LoginForm = ({ onSwitch, closeModal }) => {
+export const LoginForm = ({ onSwitch, closeModal, redirectTo }) => {
   const [login, { isLoading }] = useLoginMutation();
   const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +26,9 @@ export const LoginForm = ({ onSwitch, closeModal }) => {
         const response = await login({ email, password }).unwrap();
         dispatch(setCredentials(response));
         closeModal();
+        if (redirectTo) {
+          navigate(redirectTo);
+        }
       } catch (err) {
         console.error("Login failed:", err);
         if (err?.data?.message?.includes("Invalid email or password")) {

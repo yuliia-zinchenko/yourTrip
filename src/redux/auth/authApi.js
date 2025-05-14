@@ -36,8 +36,22 @@ export const authApi = createApi({
         credentials: "include",
       }),
     }),
+    confirmEmail: builder.query({
+      query: ({ token, userId }) => {
+        const encodedToken = encodeURIComponent(token);
+        const encodedUserId = encodeURIComponent(userId);
+        return {
+          url: `api/Auth/emailConfirmed?token=${encodedToken}&userId=${encodedUserId}`,
+          method: "GET",
+        };
+      },
+    }),
   }),
 });
 
-export const { useRegisterMutation, useLoginMutation, useGetCurrentUserQuery } =
-  authApi;
+export const {
+  useRegisterMutation,
+  useLoginMutation,
+  useGetCurrentUserQuery,
+  useConfirmEmailQuery,
+} = authApi;
