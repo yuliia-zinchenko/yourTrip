@@ -1,10 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { PrivateRoute } from "./privateRoute";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { Loader } from "./components/Loader";
-import { authApi } from "./redux/auth/authApi";
+import { useGetCurrentUserQuery } from "./redux/auth/authApi";
+import { useSelector } from "react-redux";
 
 const Layout = lazy(() => import("./components/Layout"));
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -15,11 +14,13 @@ const MyRoutesPage = lazy(() => import("./pages/MyRoutesPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(authApi.endpoints.getCurrentUser.initiate());
-  }, [dispatch]);
+  const isFetchingCurrentUser = useSelector(
+    (state) => state.auth.isFetchingCurrentUser
+  );
+  useGetCurrentUserQuery();
+  if (isFetchingCurrentUser) {
+    return <Loader />;
+  }
 
   return (
     <Suspense fallback={<Loader />}>

@@ -1,0 +1,25 @@
+.inputGroup {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.3rem;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #fff;
+}
+
+input {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border-radius: 6px;
+  background: rgb(255, 248, 220);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
