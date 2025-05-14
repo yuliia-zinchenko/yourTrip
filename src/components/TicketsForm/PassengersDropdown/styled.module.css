@@ -1,0 +1,47 @@
+.passengerDropdown {
+  font-family: "Source Serif Pro", serif;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: rgb(255, 248, 220);
+  border: 1px solid #ccc;
+  color: black;
+  font-size: 13px;
+  border-radius: 8px;
+  margin-top: 4px;
+  z-index: 1000;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.passengerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.passengerRow input {
+  color: black;
+  width: 40px;
+  padding: 6px;
+  font-size: 13px;
+}
+
+.doneButton {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 10px;
+  background-color: rgb(135, 135, 135);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.doneButton:hover {
+  background-color: rgb(161, 158, 158);
+}

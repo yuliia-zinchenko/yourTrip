@@ -13,6 +13,7 @@ label {
 }
 
 input {
+  font-family: "Source Serif Pro", serif;
   position: relative;
   width: 100%;
   max-width: 100%;

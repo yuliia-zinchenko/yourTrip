@@ -4,7 +4,6 @@ import { useState } from "react";
 import { ReactComponent as Arrow } from "../../icons/arrow-down-up.svg";
 import { useGetSuggestionsQuery } from "../../redux/flights/locationsApi";
 import { useDebounce } from "../../hooks/useDebounce";
-import { SuggestionList } from "../SuggestionList";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { InputField } from "./inputField";
@@ -186,7 +185,8 @@ export const TicketsForm = () => {
         <form className={styles.form} id="ticketForm" onSubmit={handleSubmit}>
           <div className={styles.row}>
             <InputField
-              id={destination}
+              type={"text"}
+              id={"destination"}
               label={"Where to?"}
               value={destination}
               onChange={handleDestinationChange}
@@ -197,26 +197,6 @@ export const TicketsForm = () => {
               suggestionsLoading={isDestLoading}
               onSuggestionClick={handleDestClick}
             />
-            {/* <div className={styles.inputGroup}>
-              <label htmlFor="destination">Where to?</label>
-              <input
-                type="text"
-                id="destination"
-                value={destination}
-                onChange={handleDestinationChange}
-              />
-              {errors.destination && (
-                <p className={styles.error}>{errors.destination}</p>
-              )}
-              {showDest && (
-                <SuggestionList
-                  data={destinationData}
-                  error={destinationError}
-                  isLoading={isDestLoading}
-                  onClick={handleDestClick}
-                />
-              )}
-            </div> */}
             <button
               type="button"
               onClick={handleSwitchInput}
@@ -224,92 +204,52 @@ export const TicketsForm = () => {
             >
               <Arrow className={styles.icon} />
             </button>
-            <div className={styles.inputGroup}>
-              <label htmlFor="from">Where from?</label>
-              <input
-                type="text"
-                id="from"
-                value={origin}
-                onChange={handleOriginChange}
-              />
-              {errors.origin && <p className={styles.error}>{errors.origin}</p>}
-              {showOrigin && (
-                <SuggestionList
-                  data={originData}
-                  error={originError}
-                  isLoading={isOriginLoading}
-                  onClick={handleOriginClick}
-                />
-              )}
-            </div>
+            <InputField
+              type={"text"}
+              id={"origin"}
+              label={"Where from?"}
+              value={origin}
+              onChange={handleOriginChange}
+              error={errors.origin}
+              showSuggestions={showOrigin}
+              suggestionsData={originData}
+              suggestionsError={originError}
+              suggestionsLoading={isOriginLoading}
+              onSuggestionClick={handleOriginClick}
+            />
           </div>
 
           <div className={styles.row}>
-            <div className={styles.inputGroup}>
-              <label htmlFor="date">When?</label>
-              <input
-                type="date"
-                id="date"
-                value={date}
-                onChange={handleDateChange}
-                min={new Date().toISOString().split("T")[0]}
-              />
-              {errors.date && <p className={styles.error}>{errors.date}</p>}
-              <></>
-            </div>
-            <div
-              className={styles.inputGroup}
-              style={{ position: "relative" }}
-              data-group="passengers"
-            >
-              <label htmlFor="passengers">Travellers</label>
-              <input
-                type="text"
-                id="passengers"
-                readOnly
-                value={`${adults} Adult${adults > 1 ? "s" : ""}${
-                  children > 0
-                    ? `, ${children} Child${children > 1 ? "ren" : ""}`
-                    : ""
-                }`}
-                onClick={() => setShowPassengersDropdown((prev) => !prev)}
-                className={styles.passengerInput}
-              />
-              {errors.travellers && (
-                <p className={styles.error}>{errors.travellers}</p>
-              )}
+            <InputField
+              type={"date"}
+              id={"date"}
+              label={"When?"}
+              value={date}
+              onChange={handleDateChange}
+              error={errors.date}
+              min={new Date().toISOString().split("T")[0]}
+            />
 
-              {showPassengersDropdown && (
-                <div className={styles.passengerDropdown}>
-                  <div className={styles.passengerRow}>
-                    <span>Adults (12+)</span>
-                    <input
-                      type="number"
-                      min="1"
-                      value={adults}
-                      onChange={(e) => setAdults(Number(e.target.value))}
-                    />
-                  </div>
-                  <div className={styles.passengerRow}>
-                    <span>Children (2–11)</span>
-                    <input
-                      type="number"
-                      min="0"
-                      value={children}
-                      onChange={(e) => setChildren(Number(e.target.value))}
-                    />
-                  </div>
-                  <button
-                    type="button"
-                    className={styles.doneButton}
-                    onClick={() => setShowPassengersDropdown(false)}
-                  >
-                    Done
-                  </button>
-                </div>
-              )}
-            </div>
-
+            <InputField
+              type={"text"}
+              id={"passengers"}
+              readOnly={true}
+              dataGroup={"passengers"}
+              label={"Travellers"}
+              handlePassengersDropdown={showPassengersDropdown}
+              value={`${adults} Adult${adults > 1 ? "s" : ""}${
+                children > 0
+                  ? `, ${children} Child${children > 1 ? "ren" : ""}`
+                  : ""
+              }`}
+              onClick={() => setShowPassengersDropdown((prev) => !prev)}
+              error={errors.travellers}
+              adults={adults}
+              children={children}
+              setAdults={(e) => setAdults(Number(e.target.value))}
+              setChildren={(e) => setChildren(Number(e.target.value))}
+              onClose={() => setShowPassengersDropdown(false)}
+            />
             <div className={styles.inputGroup}>
               <label htmlFor="cabin">Ticket Type</label>
               <select

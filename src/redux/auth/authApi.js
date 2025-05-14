@@ -5,14 +5,14 @@ export const authApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://192.168.0.103:7271/",
     withCredentials: true,
-    // prepareHeaders: (headers, { getState }) => {
-    //   const rawToken = getState().auth.token;
-    //   const token = rawToken?.replace(/^"(.*)"$/, "$1");
-    //   if (token) {
-    //     headers.set("Authorization", `Bearer ${token}`);
-    //   }
-    //   return headers;
-    // },
+    prepareHeaders: (headers, { getState }) => {
+      const rawToken = getState().auth.token;
+      const token = rawToken?.replace(/^"(.*)"$/, "$1");
+      if (token) {
+        headers.set("Authorization", `Bearer ${token}`);
+      }
+      return headers;
+    },
   }),
 
   endpoints: (builder) => ({
