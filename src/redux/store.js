@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { locationsApi } from "./flights/locationsApi";
+import { ticketsApi } from "./flights/ticketsApi";
 import { authApi } from "./auth/authApi";
 import authSlice from "./auth/authSlice";
 import {
@@ -21,6 +22,7 @@ const authPersistConfig = {
 };
 export const store = configureStore({
   reducer: {
+    [ticketsApi.reducerPath]: ticketsApi.reducer,
     [locationsApi.reducerPath]: locationsApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
     auth: persistReducer(authPersistConfig, authSlice),
@@ -30,7 +32,11 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(locationsApi.middleware, authApi.middleware),
+    }).concat(
+      locationsApi.middleware,
+      authApi.middleware,
+      ticketsApi.middleware
+    ),
 });
 
 export const persistor = persistStore(store);

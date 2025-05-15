@@ -1,0 +1,22 @@
+.loaderContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  position: relative;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #ccc;
+  border-top-color: #726b61;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

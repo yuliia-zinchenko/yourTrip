@@ -1,7 +1,7 @@
 .userInfo {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  margin-right: 20%;
 }
 
 .userInfoRow {
@@ -12,7 +12,7 @@
 
 .usernameText {
   font-size: 1.1rem;
-  color: #666;
+  color: black;
   font-weight: 500;
   min-width: 100px;
 }
@@ -45,7 +45,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #666;
+  color: #957230;
   transition: color 0.2s ease;
 }
 
@@ -72,7 +72,7 @@
 .userIcon {
   width: 80px;
   height: 80px;
-  color: #555;
+  color: #957230;
 }
 
 .userDetails {

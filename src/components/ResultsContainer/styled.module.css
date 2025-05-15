@@ -1,6 +1,6 @@
 .resultsContainer {
   background-color: #fffbf5;
-  min-height: 75vh;
+  min-height: 20vh;
   padding: 2rem;
   display: flex;
   flex-direction: column;

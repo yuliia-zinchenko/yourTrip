@@ -1,19 +1,91 @@
-.resultsContainer {
-  background-color: #fffbf5;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
 .ticketCard {
   background-color: white;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
+  min-height: 80px;
+
   max-width: 600px;
   font-size: 1rem;
   line-height: 1.5;
+}
+.ticketContent {
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.ticketHeader {
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
+
+.timeBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time {
+  /* color: #5a4f40; */
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.location {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.city {
+  font-weight: 500;
+}
+
+.airport {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.flightInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.duration {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.arrow {
+  color: #5a4f40;
+  font-size: 1.5rem;
+}
+
+.plane {
+  margin-bottom: -6px;
+  margin-left: 2px;
+  color: rgb(148, 187, 187);
+  width: 30px;
+  height: 30px;
+}
+
+.line {
+  margin-bottom: 7px;
+  stroke: rgb(148, 187, 187);
+}
+
+.price {
+  color: #000000;
+  font-weight: 600;
+  font-size: 18px;
 }

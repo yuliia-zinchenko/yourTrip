@@ -47,6 +47,7 @@ function App() {
               </PrivateRoute>
             }
           />
+          {/* <Route path="profile" element={<ProfilePage />} /> */}
         </Route>
         <Route path="/email-confirm" element={<EmailConfirmedPage />} />
       </Routes>

@@ -8,7 +8,7 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { InputField } from "./inputField";
 
-export const TicketsForm = () => {
+export const TicketsForm = ({ onSearch }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [destination, setDestination] = useState("");
   const [date, setDate] = useState("");
@@ -38,40 +38,50 @@ export const TicketsForm = () => {
     if (cabinParam) setCabin(cabinParam);
 
     if (travellersParam) {
-      const travellers = JSON.parse(decodeURIComponent(travellersParam));
-      const adultCount = travellers.filter(
-        (traveller) => traveller.travelerType === "ADULT"
-      ).length;
-      const childCount = travellers.filter(
-        (traveller) => traveller.travelerType === "CHILD"
-      ).length;
+      try {
+        const decoded = decodeURIComponent(travellersParam);
+        const travellers = JSON.parse(decoded);
 
-      setAdults(adultCount);
-      setChildren(childCount);
+        if (Array.isArray(travellers)) {
+          const adultCount = travellers.filter(
+            (traveller) => traveller.travelerType === "ADULT"
+          ).length;
+          const childCount = travellers.filter(
+            (traveller) => traveller.travelerType === "CHILD"
+          ).length;
+
+          setAdults(adultCount);
+          setChildren(childCount);
+        } else {
+          console.warn("Travellers is not an array:", travellers);
+        }
+      } catch (error) {
+        console.error("Failed to parse travellersParam:", error);
+      }
     }
   }, [searchParams]);
 
   useEffect(() => {
-    const updateSearchParams = () => {
-      const travellers = [];
+    const travellers = [];
 
-      for (let i = 0; i < adults; i++) {
-        travellers.push({ id: String(i + 1), travelerType: "ADULT" });
-      }
+    for (let i = 0; i < adults; i++) {
+      travellers.push({ id: String(i + 1), travelerType: "ADULT" });
+    }
 
-      for (let i = 0; i < children; i++) {
-        travellers.push({ id: String(i + adults + 1), travelerType: "CHILD" });
-      }
+    for (let i = 0; i < children; i++) {
+      travellers.push({ id: String(adults + i + 1), travelerType: "CHILD" });
+    }
 
-      setSearchParams((prev) => {
-        const params = new URLSearchParams(prev);
-        params.set("travellers", JSON.stringify(travellers));
-        return params;
-      });
+    const params = {
+      origin,
+      destination,
+      date,
+      cabin,
+      travellers,
     };
 
-    updateSearchParams();
-  }, [adults, children, setSearchParams]);
+    setSearchParams(params);
+  }, [adults, children, origin, destination, date, cabin, setSearchParams]);
 
   const [showDest, setShowDest] = useState(false);
   const [showOrigin, setShowOrigin] = useState(false);
@@ -117,13 +127,14 @@ export const TicketsForm = () => {
       ...Array(children).fill({ id: "2", travelerType: "CHILD" }),
     ];
 
-    setSearchParams({
+    const formData = {
       origin,
       destination,
       date,
       cabin,
       travellers: JSON.stringify(travellers),
-    });
+    };
+    onSearch(formData);
 
     let valid = true;
     const newErrors = { destination: "", date: "", origin: "", travellers: "" };
@@ -144,7 +155,6 @@ export const TicketsForm = () => {
       setErrors(newErrors);
       return;
     }
-    console.log(destination, date, origin, travellers);
     setErrors({ destination: "", date: "", origin: "", travellers: "" });
   };
 
