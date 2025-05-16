@@ -4,6 +4,7 @@ import { PrivateRoute } from "./privateRoute";
 import { Loader } from "./components/Loader";
 import { useGetCurrentUserQuery } from "./redux/auth/authApi";
 import { useSelector } from "react-redux";
+import { ScrollToTop } from "./utils/ScrollToTop";
 
 const Layout = lazy(() => import("./components/Layout"));
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <Suspense fallback={<Loader />}>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
