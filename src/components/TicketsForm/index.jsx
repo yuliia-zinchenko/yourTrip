@@ -8,8 +8,8 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { InputField } from "./inputField";
 
-export const TicketsForm = ({ onSearch }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
+export const TicketsForm = ({ onSearch, isFetchingTickets }) => {
+  const [searchParams] = useSearchParams();
   const [destination, setDestination] = useState("");
   const [date, setDate] = useState("");
   const [origin, setOrigin] = useState("");
@@ -61,28 +61,6 @@ export const TicketsForm = ({ onSearch }) => {
     }
   }, [searchParams]);
 
-  useEffect(() => {
-    const travellers = [];
-
-    for (let i = 0; i < adults; i++) {
-      travellers.push({ id: String(i + 1), travelerType: "ADULT" });
-    }
-
-    for (let i = 0; i < children; i++) {
-      travellers.push({ id: String(adults + i + 1), travelerType: "CHILD" });
-    }
-
-    const params = {
-      origin,
-      destination,
-      date,
-      cabin,
-      travellers,
-    };
-
-    setSearchParams(params);
-  }, [adults, children, origin, destination, date, cabin, setSearchParams]);
-
   const [showDest, setShowDest] = useState(false);
   const [showOrigin, setShowOrigin] = useState(false);
 
@@ -122,20 +100,26 @@ export const TicketsForm = ({ onSearch }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const travellers = [
-      ...Array(adults).fill({ id: "1", travelerType: "ADULT" }),
-      ...Array(children).fill({ id: "2", travelerType: "CHILD" }),
-    ];
+
+    const travellers = [];
+
+    for (let i = 0; i < adults; i++) {
+      travellers.push({ id: String(i + 1), travelerType: "ADULT" });
+    }
+
+    for (let i = 0; i < children; i++) {
+      travellers.push({ id: String(adults + i + 1), travelerType: "CHILD" });
+    }
 
     const formData = {
       origin,
       destination,
       date,
       cabin,
-      travellers: JSON.stringify(travellers),
+      travellers,
     };
-    onSearch(formData);
 
+    onSearch(formData);
     let valid = true;
     const newErrors = { destination: "", date: "", origin: "", travellers: "" };
 
@@ -275,7 +259,12 @@ export const TicketsForm = ({ onSearch }) => {
           </div>
         </form>
       </div>
-      <button type="submit" className={styles.button} form="ticketForm">
+      <button
+        type="submit"
+        className={styles.button}
+        form="ticketForm"
+        disabled={isFetchingTickets}
+      >
         Search
         <Search className={styles.icon} />
       </button>

@@ -31,7 +31,7 @@ export const LoginForm = ({ onSwitch, closeModal, redirectTo }) => {
         }
       } catch (err) {
         console.error("Login failed:", err);
-        if (err?.data?.message?.includes("Invalid email or password")) {
+        if (err?.data?.title?.includes("Unauthorized")) {
           setErrors({
             general: "Invalid email or password",
           });

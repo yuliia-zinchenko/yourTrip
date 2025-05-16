@@ -7,17 +7,11 @@ import { LittleLoader } from "../../components/Loader/LittleLoader";
 import { useSearchParams } from "react-router-dom";
 import css from "./styled.module.css";
 import { ReactComponent as Plane } from "../../icons/airplane_for_ticket.svg";
-import { useEffect } from "react";
 
 const SearchTickets = () => {
   const [, setSearchParams] = useSearchParams();
   const [searchTickets, { data, isLoading, error }] =
     useSearchTicketsMutation();
-  useEffect(() => {
-    if (data) {
-      console.log("Отримані дані від сервера:", data);
-    }
-  }, [data]);
 
   const handleSearch = (formData) => {
     const { origin, destination, date, cabin, travellers } = formData;
@@ -36,7 +30,7 @@ const SearchTickets = () => {
   return (
     <>
       <MainPicture>
-        <TicketsForm onSearch={handleSearch} isLoading={isLoading} />
+        <TicketsForm onSearch={handleSearch} isFetchingTickets={isLoading} />
       </MainPicture>
       <ResultsContainer>
         {isLoading && <LittleLoader />}
