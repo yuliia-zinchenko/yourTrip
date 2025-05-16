@@ -3,6 +3,7 @@ import { locationsApi } from "./flights/locationsApi";
 import { ticketsApi } from "./flights/ticketsApi";
 import { authApi } from "./auth/authApi";
 import authSlice from "./auth/authSlice";
+import { placesApi } from "./places/placeAutocomplete";
 import {
   persistStore,
   persistReducer,
@@ -22,6 +23,7 @@ const authPersistConfig = {
 };
 export const store = configureStore({
   reducer: {
+    [placesApi.reducerPath]: placesApi.reducer,
     [ticketsApi.reducerPath]: ticketsApi.reducer,
     [locationsApi.reducerPath]: locationsApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
@@ -35,7 +37,8 @@ export const store = configureStore({
     }).concat(
       locationsApi.middleware,
       authApi.middleware,
-      ticketsApi.middleware
+      ticketsApi.middleware,
+      placesApi.middleware
     ),
 });
 

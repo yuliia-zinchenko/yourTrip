@@ -1,6 +1,8 @@
 import styles from "./styled.module.css";
 import { SuggestionList } from "../../SuggestionList";
 import { PassengersDropdown } from "../PassengersDropdown";
+import { ReactComponent as Plane } from "../../../icons/airplane-fill.svg";
+import { ReactComponent as Location } from "../../../icons/geo-alt-fill.svg";
 
 export const InputField = ({
   value,
@@ -44,9 +46,21 @@ export const InputField = ({
       {showSuggestions && (
         <SuggestionList
           data={suggestionsData}
-          error={suggestionsError}
           isLoading={suggestionsLoading}
+          error={suggestionsError}
           onClick={onSuggestionClick}
+          renderIcon={(item) =>
+            item.subType === "AIRPORT" ? (
+              <Plane className={styles.plane} />
+            ) : (
+              <Location className={styles.plane} />
+            )
+          }
+          renderText={(item) =>
+            `${item.name.charAt(0).toUpperCase() + item.name.slice(1)} (${
+              item.iataCode
+            })`
+          }
         />
       )}
       {handlePassengersDropdown && (

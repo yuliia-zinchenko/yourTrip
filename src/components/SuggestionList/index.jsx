@@ -1,8 +1,26 @@
 import styles from "./styled.module.css";
-import { ReactComponent as Plane } from "../../icons/airplane-fill.svg";
-import { ReactComponent as Location } from "../../icons/geo-alt-fill.svg";
 
-export const SuggestionList = ({ data, error, isLoading, onClick }) => {
+export const SuggestionList = ({
+  data,
+  error,
+  isLoading,
+  onClick,
+  renderIcon,
+  renderText,
+}) => {
+  const items = Array.isArray(data)
+    ? data
+    : Array.isArray(data?.data)
+    ? data.data
+    : [];
+
+  const capitalizeEachWord = (str) =>
+    str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+
   return (
     <>
       {data && (
@@ -10,29 +28,22 @@ export const SuggestionList = ({ data, error, isLoading, onClick }) => {
           <ul className={styles.suggestionList}>
             {isLoading && <p>Loading...</p>}
             {error && <p>Error</p>}
-            {data?.data.map((location, index) => (
-              <li
-                key={index}
-                className={styles.suggestionItem}
-                onClick={() =>
-                  onClick(
-                    location.name
-                      .toLowerCase()
-                      .replace(/^\w/, (c) => c.toUpperCase())
-                  )
-                }
-              >
-                {location.subType === "AIRPORT" ? (
-                  <Plane className={styles.plane} />
-                ) : (
-                  <Location className={styles.plane} />
-                )}
-                {location.name
-                  .toLowerCase()
-                  .replace(/^\w/, (c) => c.toUpperCase())}{" "}
-                ({location.iataCode})
-              </li>
-            ))}
+            {items.map((item, index) => {
+              const renderedText = renderText?.(item);
+              const rawText =
+                renderedText || item.name || item.description || "";
+
+              return (
+                <li
+                  key={index}
+                  className={styles.suggestionItem}
+                  onClick={() => onClick(item)}
+                >
+                  {renderIcon ? renderIcon(item) : null}
+                  {capitalizeEachWord(rawText)}
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}
