@@ -11,7 +11,7 @@ export const useCurrentUser = () => {
 
   useEffect(() => {
     if (data) {
-      dispatch(setCredentials(data)); // Якщо є дані користувача, зберігаємо їх у Redux
+      dispatch(setCredentials(data));
     }
   }, [data, dispatch]);
 

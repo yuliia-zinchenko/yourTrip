@@ -1,0 +1,37 @@
+.pagination {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #726b61;
+}
+
+.button {
+    padding: 0.3rem 0.8rem;
+    border: none;
+    background-color: #fffbf5;
+    color: #fffbf5;
+    box-shadow: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.button:not(:disabled):hover {
+    background-color: #bab9b9b5;
+    color: white;
+}
+
+.arrow {
+    margin-top: 3px;
+    fill: #726b61;
+    stroke: #726b61;
+    width: 15px;
+    height: 15px;
+}

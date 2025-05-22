@@ -1,0 +1,228 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    background: #f8f5f0;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px #e3dfd6;
+    overflow: hidden;
+    align-items: stretch;
+    padding: 0;
+    min-height: 300px;
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+.imgWrap {
+    flex-shrink: 0;
+    width: 200px;
+    height: 260px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 16px;
+    box-shadow: 0 4px 12px #ece6dc;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 24px 16px 24px 0;
+    min-width: 0;
+}
+
+.title {
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    color: #3d3933;
+    line-height: 1.2;
+}
+
+.locationRow {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #3d3933;
+    font-family: 'Merriweather', serif;
+}
+
+.locationIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    color: #3d3933;
+    flex-shrink: 0;
+}
+
+.ArrowIcon{
+    color: #3d3933;
+
+}
+
+
+.description {
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #3d3933;
+    line-height: 1.4;
+    max-width: 800px;
+    min-height: 100px;
+    overflow: hidden;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.bottom{
+    gap: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detailsBtn {
+    background: #fff;
+    border: none;
+    border-radius: 16px;
+    width: 56px;
+    height: 56px;
+    box-shadow: 0 4px 16px #e3dfd6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+    font-size: 28px;
+}
+.detailsBtn:hover {
+    box-shadow: 0 8px 24px #e3dfd6;
+}
+
+.styled_detailsBtn__GQ6zO {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.styled_detailsBtn__GQ6zO:hover {
+    box-shadow: 0 8px 24px #e3dfd6;
+    transform: translateY(-2px);
+}
+
+.saveBtn {
+    background: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 8px 20px;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #707070;
+    box-shadow: 0 4px 16px #e3dfd6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+}
+.saveBtn:hover,
+.saveBtn[aria-pressed="true"] {
+    box-shadow: 0 8px 24px #e3dfd6;
+    background: #f8f5f0;
+    color: #3d3933;
+}
+.heart {
+    color: #f48da0;
+    font-size: 24px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.rating, .score {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    color: #3d3933;
+    padding: 6px 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #e3dfd6;
+    display: inline-block;
+    margin-bottom: 12px;
+    max-width: fit-content;
+}
+
+.price {
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d3933;
+    background-color: #f8f5f0;
+    padding: 10px 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px #e3dfd6;
+    display: inline-block;
+    margin-top: auto;
+}
+.sortContainer {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sortContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sortLabel {
+    font-size: 14px;
+    color: #6d5c4d;
+    font-weight: 500;
+}
+
+.sortSelect {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 8px 35px 8px 15px;
+    border: 1px solid #d1c7b7;
+    border-radius: 20px;
+    background-color: #f8f4ee;
+    color: #5a4a42;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235a4a42'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    min-width: 180px;
+}
+
+.sortSelect:hover {
+    background-color: #f0e9e0;
+    border-color: #b8a99a;
+}
+
+.sortSelect:focus {
+    border-color: #9c8b7a;
+    box-shadow: 0 0 0 2px rgba(156,139, 122, 0.2)}

@@ -5,15 +5,18 @@ import { Outlet } from "react-router-dom";
 import { Loader } from "../Loader";
 
 const Layout = () => {
-  return (
-    <div style={{ margin: "0 auto", padding: "0" }}>
-      <AppBar />
-      <Suspense fallback={<Loader />}>
-        <Outlet />
-        <Footer />
-      </Suspense>
-    </div>
-  );
+    return (
+        <div
+            style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+        >
+            <AppBar />
+            <Suspense fallback={<Loader />}>
+                <div style={{ flex: 1 }}>
+                    <Outlet />
+                </div>
+            </Suspense>
+            <Footer />
+        </div>
+    );
 };
-
 export default Layout;
