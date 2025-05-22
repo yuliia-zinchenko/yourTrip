@@ -1,0 +1,25 @@
+.reviews {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.reviews h2 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.review {
+  border-top: 1px solid #ddd;
+  padding: 0.75rem 0;
+}
+
+.review:first-child {
+  border-top: none;
+}
+
+.review p {
+  margin: 0.2rem 0;
+  color: #444;
+}

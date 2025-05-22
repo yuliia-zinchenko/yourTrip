@@ -2,7 +2,8 @@
   max-width: 900px;
   min-height: 50vw;
   margin: 30px auto;
-  padding: 4rem;
+  position: relative;
+  padding: 4em;
   background-color: rgb(248, 249, 242);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -13,7 +14,7 @@
 
 .userInfoAchievementsContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
 }
 

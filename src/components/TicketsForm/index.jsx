@@ -8,8 +8,8 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { InputField } from "./inputField";
 
-export const TicketsForm = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+export const TicketsForm = ({ onSearch, isFetchingTickets }) => {
+  const [searchParams] = useSearchParams();
   const [destination, setDestination] = useState("");
   const [date, setDate] = useState("");
   const [origin, setOrigin] = useState("");
@@ -38,40 +38,28 @@ export const TicketsForm = () => {
     if (cabinParam) setCabin(cabinParam);
 
     if (travellersParam) {
-      const travellers = JSON.parse(decodeURIComponent(travellersParam));
-      const adultCount = travellers.filter(
-        (traveller) => traveller.travelerType === "ADULT"
-      ).length;
-      const childCount = travellers.filter(
-        (traveller) => traveller.travelerType === "CHILD"
-      ).length;
+      try {
+        const decoded = decodeURIComponent(travellersParam);
+        const travellers = JSON.parse(decoded);
 
-      setAdults(adultCount);
-      setChildren(childCount);
+        if (Array.isArray(travellers)) {
+          const adultCount = travellers.filter(
+            (traveller) => traveller.travelerType === "ADULT"
+          ).length;
+          const childCount = travellers.filter(
+            (traveller) => traveller.travelerType === "CHILD"
+          ).length;
+
+          setAdults(adultCount);
+          setChildren(childCount);
+        } else {
+          console.warn("Travellers is not an array:", travellers);
+        }
+      } catch (error) {
+        console.error("Failed to parse travellersParam:", error);
+      }
     }
   }, [searchParams]);
-
-  useEffect(() => {
-    const updateSearchParams = () => {
-      const travellers = [];
-
-      for (let i = 0; i < adults; i++) {
-        travellers.push({ id: String(i + 1), travelerType: "ADULT" });
-      }
-
-      for (let i = 0; i < children; i++) {
-        travellers.push({ id: String(i + adults + 1), travelerType: "CHILD" });
-      }
-
-      setSearchParams((prev) => {
-        const params = new URLSearchParams(prev);
-        params.set("travellers", JSON.stringify(travellers));
-        return params;
-      });
-    };
-
-    updateSearchParams();
-  }, [adults, children, setSearchParams]);
 
   const [showDest, setShowDest] = useState(false);
   const [showOrigin, setShowOrigin] = useState(false);
@@ -112,19 +100,26 @@ export const TicketsForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const travellers = [
-      ...Array(adults).fill({ id: "1", travelerType: "ADULT" }),
-      ...Array(children).fill({ id: "2", travelerType: "CHILD" }),
-    ];
 
-    setSearchParams({
+    const travellers = [];
+
+    for (let i = 0; i < adults; i++) {
+      travellers.push({ id: String(i + 1), travelerType: "ADULT" });
+    }
+
+    for (let i = 0; i < children; i++) {
+      travellers.push({ id: String(adults + i + 1), travelerType: "CHILD" });
+    }
+
+    const formData = {
       origin,
       destination,
       date,
       cabin,
-      travellers: JSON.stringify(travellers),
-    });
+      travellers,
+    };
 
+    onSearch(formData);
     let valid = true;
     const newErrors = { destination: "", date: "", origin: "", travellers: "" };
 
@@ -144,7 +139,6 @@ export const TicketsForm = () => {
       setErrors(newErrors);
       return;
     }
-    console.log(destination, date, origin, travellers);
     setErrors({ destination: "", date: "", origin: "", travellers: "" });
   };
 
@@ -155,14 +149,19 @@ export const TicketsForm = () => {
     setShowDest(origin.length > 0);
     setShowOrigin(destination.length > 0);
   };
+  const formatCityName = (name) => {
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+  };
 
-  const handleDestClick = (value) => {
-    setDestination(value);
+  const handleDestClick = (item) => {
+    const city = formatCityName(item.name);
+    setDestination(`${city} (${item.iataCode})`);
     setShowDest(false);
   };
 
-  const handleOriginClick = (value) => {
-    setOrigin(value);
+  const handleOriginClick = (item) => {
+    const city = formatCityName(item.name);
+    setOrigin(`${city} (${item.iataCode})`);
     setShowOrigin(false);
   };
 
@@ -265,7 +264,12 @@ export const TicketsForm = () => {
           </div>
         </form>
       </div>
-      <button type="submit" className={styles.button} form="ticketForm">
+      <button
+        type="submit"
+        className={styles.button}
+        form="ticketForm"
+        disabled={isFetchingTickets}
+      >
         Search
         <Search className={styles.icon} />
       </button>

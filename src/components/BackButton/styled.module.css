@@ -1,0 +1,17 @@
+.button {
+  background-color: transparent;
+  border: none;
+  color: #2c3e50;
+  cursor: pointer;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: 0.3s ease, color 0.3s ease;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}

@@ -2,11 +2,12 @@
   padding: 16px;
   background-color: #f9f9f9;
   border-radius: 8px;
-  min-width: 300px;
-  width: 400px;
-  height: 60px;
+  width: 100%;
   max-width: 500px;
+  min-width: 250px;
+  height: 60px;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 .name {

@@ -24,3 +24,7 @@ input {
   border: 1px solid #ccc;
   font-size: 1rem;
 }
+.error {
+  color: rgb(234, 95, 95);
+  font-size: 12px;
+}

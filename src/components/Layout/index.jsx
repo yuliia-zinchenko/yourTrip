@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import { Loader } from "../Loader";
 
 const Layout = () => {
+
     return (
         <div
             style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
@@ -20,3 +21,4 @@ const Layout = () => {
     );
 };
 export default Layout;
+

@@ -4,6 +4,7 @@ import { PrivateRoute } from "./privateRoute";
 import { Loader } from "./components/Loader";
 import { useGetCurrentUserQuery } from "./redux/auth/authApi";
 import { useSelector } from "react-redux";
+import { ScrollToTop } from "./utils/ScrollToTop";
 
 const Layout = lazy(() => import("./components/Layout"));
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -13,6 +14,7 @@ const SearchPlaces = lazy(() => import("./pages/PlacesPage"));
 const MyRoutesPage = lazy(() => import("./pages/MyRoutesPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 const EmailConfirmedPage = lazy(() => import("./pages/EmailConfirmedPage"));
+const PlacePage = lazy(() => import("./pages/PlacePage"));
 
 function App() {
   const isFetchingCurrentUser = useSelector(
@@ -25,12 +27,15 @@ function App() {
 
   return (
     <Suspense fallback={<Loader />}>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="tickets" element={<SearchTickets />} />
           <Route path="hotels" element={<SearchHotels />} />
           <Route path="places" element={<SearchPlaces />} />
+          <Route path="place" element={<PlacePage />} />
+
           <Route
             path="routes"
             element={
@@ -47,6 +52,7 @@ function App() {
               </PrivateRoute>
             }
           />
+          {/* <Route path="profile" element={<ProfilePage />} /> */}
         </Route>
         <Route path="/email-confirm" element={<EmailConfirmedPage />} />
       </Routes>

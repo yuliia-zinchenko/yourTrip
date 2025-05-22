@@ -1,13 +1,10 @@
 import styles from "./styled.module.css";
+import { forwardRef } from "react";
 
-export const ResultsContainer = ({ children }) => {
+export const ResultsContainer = forwardRef(({ children }, ref) => {
   return (
-    <div className={styles.resultsContainer}>
+    <div className={styles.resultsContainer} ref={ref}>
       {children}
-      {/* Замінити на апі та винести в окремий компонент!!!!! */}
-      {/* <div className={styles.ticketCard}></div>
-
-      <div className={styles.ticketCard}></div> */}
     </div>
   );
-};
+});

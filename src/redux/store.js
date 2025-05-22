@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { locationsApi } from "./flights/locationsApi";
+import { ticketsApi } from "./flights/ticketsApi";
 import { authApi } from "./auth/authApi";
 import authSlice from "./auth/authSlice";
 import { bookingApi } from './bookingApi/bookingApi';
 import { hotelSearchApi } from './bookingApi/hotelSearchApi';
-
+import { placesApi } from "./places/placesResultApi";
+import { profileApi } from "./profile/profileApi";
 import {
   persistStore,
   persistReducer,
@@ -24,6 +26,9 @@ const authPersistConfig = {
 };
 export const store = configureStore({
   reducer: {
+    [profileApi.reducerPath]: profileApi.reducer,
+    [placesApi.reducerPath]: placesApi.reducer,
+    [ticketsApi.reducerPath]: ticketsApi.reducer,
     [locationsApi.reducerPath]: locationsApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
     auth: persistReducer(authPersistConfig, authSlice),
@@ -35,7 +40,15 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(locationsApi.middleware, authApi.middleware, bookingApi.middleware, hotelSearchApi.middleware),
+    }).concat(
+      locationsApi.middleware,
+      authApi.middleware,
+      ticketsApi.middleware,
+      placesApi.middleware,
+      profileApi.middleware,
+     bookingApi.middleware,
+     hotelSearchApi.middleware
+    ),
 
 });
 

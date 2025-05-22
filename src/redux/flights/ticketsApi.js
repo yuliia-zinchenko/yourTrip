@@ -1,22 +1,19 @@
-// import { createApi } from "@reduxjs/toolkit/query/react";
-// import { customBaseQuery } from "./locationsApi";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-// export const ticketsApi = createApi({
-//   reducerPath: "ticketsApi",
-//   baseQuery: customBaseQuery,
-//   endpoints: (builder) => ({
-//     getTickets: builder.query({
-//       query: ({ origin, destination, date, travellers }) => ({
-//         url: "shopping/flight-offers",
-//         params: {
-//           originLocationCode: origin,
-//           destinationLocationCode: destination,
-//           departureDate: date,
-//           adults: travellers,
-//         },
-//       }),
-//     }),
-//   }),
-// });
+export const ticketsApi = createApi({
+  reducerPath: "ticketsApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://192.168.0.103:7271/api/",
+  }),
+  endpoints: (builder) => ({
+    searchTickets: builder.mutation({
+      query: (formData) => ({
+        url: "Flights/search",
+        method: "POST",
+        body: formData,
+      }),
+    }),
+  }),
+});
 
-// export const { useGetTicketsQuery } = ticketsApi;
+export const { useSearchTicketsMutation } = ticketsApi;

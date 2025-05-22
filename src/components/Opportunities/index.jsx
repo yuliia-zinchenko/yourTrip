@@ -3,7 +3,9 @@ import styles from "./styled.module.css";
 
 export const Opportunities = () => {
   const steps = [
-    "Choose your destination",
+    <Link className={styles.stepLink} to="tickets">
+      Choose your destination
+    </Link>,
     <Link className={styles.stepLink} to="tickets">
       Find your tickets
     </Link>,

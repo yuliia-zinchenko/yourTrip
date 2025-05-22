@@ -3,6 +3,7 @@ import { ReactComponent as Left } from "../../icons/arrow-left.svg";
 import { ReactComponent as Right } from "../../icons/right.svg";
 
 export const Pagination = ({ page, totalPages, onPageChange }) => {
+
     return (
         <div className={styles.pagination}>
             <button
@@ -25,3 +26,4 @@ export const Pagination = ({ page, totalPages, onPageChange }) => {
         </div>
     );
 };
+

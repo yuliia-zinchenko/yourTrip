@@ -1,0 +1,60 @@
+.info {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  color: #2c2c2c;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+.info p,
+.info ul {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.info strong {
+  display: inline-block;
+  min-width: 120px;
+  color: #555;
+}
+
+.info ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.info li::before {
+  content: "•";
+  color: #0077cc;
+  margin-right: 0.5rem;
+}
+
+.info a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.info a:hover {
+  text-decoration: underline;
+}
+
+.mapButton {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background-color: #0077cc;
+  color: white !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.mapButton:hover {
+  background-color: #005fa3;
+}

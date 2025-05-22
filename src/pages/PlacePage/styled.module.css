@@ -1,0 +1,41 @@
+.page {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.error {
+  color: rgb(234, 95, 95);
+  font-size: 14px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.saveButton {
+  padding: 2em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  box-shadow: none !important;
+}
+
+.icon {
+  width: 35px;
+  height: 30px;
+  stroke: rgb(221, 123, 123);
+  fill: none;
+}
+
+.saveButton:hover {
+  transform: scale(1.1);
+}

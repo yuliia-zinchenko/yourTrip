@@ -1,5 +1,5 @@
 .section {
-  background-color: #564d41; /*можливо світліше*/
+  background-color: #564d41;
   width: 100%;
   padding: 2.5rem 1rem;
 }
@@ -53,7 +53,6 @@
   align-items: center;
 }
 .arrow {
-  /* font-size: 1.5rem; */
   stroke-width: 5;
   margin-left: 10px;
 }
