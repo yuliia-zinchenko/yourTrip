@@ -14,12 +14,21 @@ export const SuggestionList = ({
     ? data.data
     : [];
 
-  const capitalizeEachWord = (str) =>
-    str
+  const capitalizeBeforeParenthesis = (str) => {
+    if (!str) return "";
+
+    const [beforeParen, afterParen] = str.split(" (");
+
+    const capitalized = beforeParen
       .toLowerCase()
       .split(" ")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
+
+    return afterParen !== undefined
+      ? `${capitalized} (${afterParen}`
+      : capitalized;
+  };
 
   return (
     <>
@@ -40,7 +49,7 @@ export const SuggestionList = ({
                   onClick={() => onClick(item)}
                 >
                   {renderIcon ? renderIcon(item) : null}
-                  {capitalizeEachWord(rawText)}
+                  {capitalizeBeforeParenthesis(rawText)}
                 </li>
               );
             })}

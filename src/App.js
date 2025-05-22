@@ -14,6 +14,7 @@ const SearchPlaces = lazy(() => import("./pages/PlacesPage"));
 const MyRoutesPage = lazy(() => import("./pages/MyRoutesPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 const EmailConfirmedPage = lazy(() => import("./pages/EmailConfirmedPage"));
+const PlacePage = lazy(() => import("./pages/PlacePage"));
 
 function App() {
   const isFetchingCurrentUser = useSelector(
@@ -33,6 +34,8 @@ function App() {
           <Route path="tickets" element={<SearchTickets />} />
           <Route path="hotels" element={<SearchHotels />} />
           <Route path="places" element={<SearchPlaces />} />
+          <Route path="place" element={<PlacePage />} />
+
           <Route
             path="routes"
             element={

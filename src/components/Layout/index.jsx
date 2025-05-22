@@ -6,14 +6,18 @@ import { Loader } from "../Loader";
 
 const Layout = () => {
   return (
-    <div style={{ margin: "0 auto", padding: "0" }}>
+    <div
+      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+    >
       <AppBar />
       <Suspense fallback={<Loader />}>
-        <Outlet />
+        <div style={{ flex: 1 }}>
+          <Outlet />
+        </div>
+
         <Footer />
       </Suspense>
     </div>
   );
 };
-
 export default Layout;

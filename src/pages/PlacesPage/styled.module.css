@@ -1,0 +1,22 @@
+.error {
+  color: rgb(234, 95, 95);
+  font-size: 14px;
+}
+
+.Start {
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 800;
+  text-align: center;
+  padding: 10px;
+  color: #5a4f40;
+  font-size: 22px;
+  gap: 10px;
+}
+
+.Place {
+  width: 100px;
+  height: 100px;
+}

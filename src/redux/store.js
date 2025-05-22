@@ -3,7 +3,8 @@ import { locationsApi } from "./flights/locationsApi";
 import { ticketsApi } from "./flights/ticketsApi";
 import { authApi } from "./auth/authApi";
 import authSlice from "./auth/authSlice";
-import { placesApi } from "./places/placeAutocomplete";
+import { placesApi } from "./places/placesResultApi";
+import { profileApi } from "./profile/profileApi";
 import {
   persistStore,
   persistReducer,
@@ -23,6 +24,7 @@ const authPersistConfig = {
 };
 export const store = configureStore({
   reducer: {
+    [profileApi.reducerPath]: profileApi.reducer,
     [placesApi.reducerPath]: placesApi.reducer,
     [ticketsApi.reducerPath]: ticketsApi.reducer,
     [locationsApi.reducerPath]: locationsApi.reducer,
@@ -38,7 +40,8 @@ export const store = configureStore({
       locationsApi.middleware,
       authApi.middleware,
       ticketsApi.middleware,
-      placesApi.middleware
+      placesApi.middleware,
+      profileApi.middleware
     ),
 });
 

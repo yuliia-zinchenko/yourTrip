@@ -1,0 +1,74 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.card {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  background-color: #c9c9c9cc;
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cardImage {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.cardTitle {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  color: #564d41;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.noImage {
+  width: 100%;
+  height: 320px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-style: italic;
+}
+
+.error {
+  color: rgb(234, 95, 95);
+  font-size: 14px;
+}
+
+.Start {
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 800;
+  text-align: center;
+  padding: 10px;
+  color: #5a4f40;
+  font-size: 22px;
+  gap: 10px;
+}
+
+.Place {
+  width: 100px;
+  height: 100px;
+}

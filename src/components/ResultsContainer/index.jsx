@@ -1,5 +1,10 @@
 import styles from "./styled.module.css";
+import { forwardRef } from "react";
 
-export const ResultsContainer = ({ children }) => {
-  return <div className={styles.resultsContainer}>{children}</div>;
-};
+export const ResultsContainer = forwardRef(({ children }, ref) => {
+  return (
+    <div className={styles.resultsContainer} ref={ref}>
+      {children}
+    </div>
+  );
+});

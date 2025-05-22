@@ -149,14 +149,19 @@ export const TicketsForm = ({ onSearch, isFetchingTickets }) => {
     setShowDest(origin.length > 0);
     setShowOrigin(destination.length > 0);
   };
+  const formatCityName = (name) => {
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+  };
 
-  const handleDestClick = (value) => {
-    setDestination(value);
+  const handleDestClick = (item) => {
+    const city = formatCityName(item.name);
+    setDestination(`${city} (${item.iataCode})`);
     setShowDest(false);
   };
 
-  const handleOriginClick = (value) => {
-    setOrigin(value);
+  const handleOriginClick = (item) => {
+    const city = formatCityName(item.name);
+    setOrigin(`${city} (${item.iataCode})`);
     setShowOrigin(false);
   };
 
