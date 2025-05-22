@@ -9,83 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a58741cb-f05f-4835-8518-ae100870b03f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/BackButton/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BackButton/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Place/PlaceGallery/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Place/PlaceGallery/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Place/PlaceHeader/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Place/PlaceHeader/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Place/PlaceInfo/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Place/PlaceInfo/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Place/PlaceMap/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Place/PlaceMap/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Place/PlaceRewiews/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Place/PlaceRewiews/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PlacesResults/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PlacesResults/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Profile/LogoutButton/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Profile/LogoutButton/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SaveButton/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useCombinedSuggestions.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/airplane_for_ticket.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/check-lg.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/heart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/line_for_ticket.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/logout.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/suit-heart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/ticket-perforated.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/x.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/PlacePage/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/PlacePage/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/PlacesPage/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SearchTicketsPage/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/places/placesResultApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/profile/profileApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/ScrollToTop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Greetings/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Greetings/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Loader/LittleLoader/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader/LittleLoader/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Loader/LittleLoader/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader/LittleLoader/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Opportunities/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Opportunities/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pagination/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pagination/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlacesForm/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlacesForm/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlacesForm/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlacesForm/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopularPlaces/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopularPlaces/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopularPlaces/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopularPlaces/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Achievements/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Achievements/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/userInfo/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/userInfo/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/userInfo/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/userInfo/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ResultsContainer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResultsContainer/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ResultsContainer/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResultsContainer/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SuggestionList/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SuggestionList/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SuggestionList/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SuggestionList/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TicketsForm/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketsForm/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TicketsForm/inputField/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketsForm/inputField/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TicketsForm/inputField/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketsForm/inputField/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TicketsForm/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketsForm/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TicketsResults/Actions/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketsResults/Actions/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TicketsResults/Actions/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketsResults/Actions/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TicketsResults/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketsResults/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TicketsResults/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketsResults/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PlacesPage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PlacesPage/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SearchTicketsPage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SearchTicketsPage/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth/authSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/authSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/flights/locationsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/flights/locationsApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/flights/ticketsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/flights/ticketsApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
-    </list>
+    <list default="true" id="a58741cb-f05f-4835-8518-ae100870b03f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +48,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Merging dev__lera",
+    "git-widget-placeholder": "dev__lera",
     "last_opened_file_path": "/Users/arturrubachenko/uni/yourTrip/src/icons",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -156,7 +80,7 @@
       <workItem from="1747232781148" duration="1861000" />
       <workItem from="1747305543639" duration="48211000" />
       <workItem from="1747476312227" duration="28346000" />
-      <workItem from="1747904790197" duration="15326000" />
+      <workItem from="1747904790197" duration="15714000" />
     </task>
     <servers />
   </component>
