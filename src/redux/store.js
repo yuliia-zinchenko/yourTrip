@@ -3,10 +3,11 @@ import { locationsApi } from "./flights/locationsApi";
 import { ticketsApi } from "./flights/ticketsApi";
 import { authApi } from "./auth/authApi";
 import authSlice from "./auth/authSlice";
-import { bookingApi } from './bookingApi/bookingApi';
-import { hotelSearchApi } from './bookingApi/hotelSearchApi';
+import { bookingApi } from "./bookingApi/bookingApi";
+import { hotelSearchApi } from "./bookingApi/hotelSearchApi";
 import { placesApi } from "./places/placesResultApi";
 import { profileApi } from "./profile/profileApi";
+import { routesApi } from "./routesApi/saveToRoute";
 import {
   persistStore,
   persistReducer,
@@ -27,6 +28,7 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     [profileApi.reducerPath]: profileApi.reducer,
+    [routesApi.reducerPath]: routesApi.reducer,
     [placesApi.reducerPath]: placesApi.reducer,
     [ticketsApi.reducerPath]: ticketsApi.reducer,
     [locationsApi.reducerPath]: locationsApi.reducer,
@@ -46,10 +48,10 @@ export const store = configureStore({
       ticketsApi.middleware,
       placesApi.middleware,
       profileApi.middleware,
-     bookingApi.middleware,
-     hotelSearchApi.middleware
+      bookingApi.middleware,
+      hotelSearchApi.middleware,
+      routesApi.middleware
     ),
-
 });
 
 export const persistor = persistStore(store);

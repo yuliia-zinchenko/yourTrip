@@ -1,8 +1,8 @@
-// useGetCurrentUser.js (якщо треба отримати поточного користувача в будь-якому компоненті)
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { authApi } from "../redux/auth/authApi";
-import { setCredentials } from "../../redux/auth/authSlice";
+// import { authApi } from "../redux/auth/authApi";
+import { useGetCurrentUserQuery } from "../redux/auth/authApi";
+import { setCredentials } from "../redux/auth/authSlice";
 
 export const useCurrentUser = () => {
   const dispatch = useDispatch();

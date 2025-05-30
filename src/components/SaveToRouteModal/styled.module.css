@@ -1,0 +1,153 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #fffaf0;
+  padding: 24px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.routeList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.routeItem {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.routeItem:hover {
+  background-color: #f0f0f0;
+}
+
+.newRouteBtn {
+  display: inline-block;
+  margin-left: 0;
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  margin-bottom: 12px;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 0;
+  text-align: left;
+}
+
+.newRouteBtn:hover {
+  color: #0056b3;
+}
+
+.input {
+  flex-grow: 1;
+  min-width: 0;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.saveBtn,
+.cancelBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 8px;
+  transition: color 0.3s ease;
+}
+
+.titleRow {
+  position: relative;
+  text-align: center;
+  margin-bottom: 16px;
+  padding-right: 2.5rem;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  line-height: 1;
+}
+
+.closeButton {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #5a4f40;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.closeButton:hover {
+  color: #a58a62;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: green;
+}
+
+.cancel {
+  width: 25px;
+  height: 25px;
+  color: rgb(242, 101, 101);
+}
+
+.saveButton:hover,
+.cancelButton:hover {
+  transform: scale(1.2);
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.errorMessage {
+  color: rgb(234, 95, 95);
+  font-size: 12px;
+}
+
+.routeButton {
+  background-color: white;
+  border: 1px solid #007bff;
+  color: #007bff;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.routeButton:hover {
+  background-color: #e6f0ff;
+}
