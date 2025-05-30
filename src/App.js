@@ -39,9 +39,9 @@ function App() {
           <Route
             path="routes"
             element={
-              <PrivateRoute>
+
                 <MyRoutesPage />
-              </PrivateRoute>
+
             }
           />
           <Route

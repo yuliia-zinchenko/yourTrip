@@ -40,7 +40,6 @@ export const HotelsForm = ({ onSearch}) => {
         });
     }, [destination, checkIn, checkOut, adults, children, updateQueryParams]);
 
-
     useEffect(() => {
         const newDestination = getQueryParam('destination');
         if (newDestination && newDestination !== destination) setDestination(newDestination);
@@ -60,8 +59,6 @@ export const HotelsForm = ({ onSearch}) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [routerLocation.search, getQueryParam]);
 
-
-
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (!e.target.closest(`#destination`) && !e.target.closest(`.${styles.suggestionList}`)) {
@@ -72,8 +69,6 @@ export const HotelsForm = ({ onSearch}) => {
         document.addEventListener("click", handleClickOutside);
         return () => document.removeEventListener("click", handleClickOutside);
     }, []);
-
-
 
     const handleSuggestionClick = (suggestion) => {
         const isHotel = suggestion.destType === "hotel";
@@ -165,9 +160,6 @@ export const HotelsForm = ({ onSearch}) => {
         console.log("Sending to backend:", backendSearchParams);
         onSearch?.(backendSearchParams);
     };
-
-
-
 
     return (
         <>

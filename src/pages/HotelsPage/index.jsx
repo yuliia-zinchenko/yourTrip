@@ -60,24 +60,26 @@ const SearchHotels = () => {
             <MainPicture>
                 <HotelsForm onSearch={handleSearch} isFetching={isLoading} />
             </MainPicture>
+
             <ResultsContainer>
                 {isLoading && <LittleLoader />}
+
                 {(errorMsg || error) && (
                     <p className={css.error}>{errorMsg || "Error fetching hotels"}</p>
                 )}
-                {(data || []).length > 0 ? (
-                    <HotelsResults hotels={data} />
-                ) : (
-                    !!isLoading && !error && !data && (
-                        <div className={css.Start}>
-                            <p>Start searching now!</p>
-                            <Building className={css.Plane} />
-                        </div>
-                    )
+
+                {data && data.length > 0 && <HotelsResults hotels={data} />}
+
+                {!isLoading && !error && (!data || data.length === 0) && (
+                    <div className={css.Start}>
+                        <p>Start searching now!</p>
+                        <Building className={css.Building} />
+                    </div>
                 )}
             </ResultsContainer>
         </>
     );
+
 };
 
 export default SearchHotels;

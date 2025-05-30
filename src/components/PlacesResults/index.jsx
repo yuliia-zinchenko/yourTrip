@@ -2,7 +2,7 @@ import styles from "./styled.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Pagination } from "../Pagination";
-import { ReactComponent as Place } from "../../icons/geo-alt-fill.svg";
+import { ReactComponent as Place } from "../../icons/uiw--map.svg";
 
 const ITEMS_PER_PAGE = 8;
 

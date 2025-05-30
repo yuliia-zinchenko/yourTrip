@@ -1,6 +1,7 @@
 .wrapper {
   width: 100%;
   background-color: #fffbf5;
+  margin-bottom: 1rem;
 }
 
 .container {
@@ -14,26 +15,44 @@
   font-size: 2.5rem;
   color: #3e372d;
   font-weight: bold;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.5rem;
+  align-items: center;
 }
 
 .step {
   font-size: 1.6rem;
-  margin: 2em;
   font-weight: 600;
 }
 
-.step:nth-child(even) {
-  grid-column: 1 / 2;
+.left {
+  grid-column: 2/ 3;
   text-align: left;
 }
 
-.step:nth-child(odd) {
-  grid-column: 2 / 3;
+.right {
+  grid-column: 1 / 2;
   text-align: right;
 }
 
+.arrow {
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.arrow svg {
+  width: 150px;
+  height: auto;
+}
 .stepLink {
   color: #3e372d;
   border-bottom: 2px solid transparent;

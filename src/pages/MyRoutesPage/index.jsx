@@ -1,10 +1,12 @@
 import { ResultsContainer } from "../../components/ResultsContainer";
+import {Cards} from  "../../components/RoutesResults";
+
 
 const MyRoutesPage = () => {
   return (
     <>
       <ResultsContainer>
-        <h1>hello</h1>
+          <Cards/>
       </ResultsContainer>
     </>
   );
