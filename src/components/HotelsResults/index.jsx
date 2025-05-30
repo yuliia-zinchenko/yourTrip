@@ -196,6 +196,8 @@ export const HotelsResults = ({
                         <ArrowIcon className={styles.ArrowIcon} />
                       </a>
                       <SaveButton
+                        json={hotel}
+                        itemType={hotel.type}
                         className={clsx(styles.saveBtn, {
                           [styles.saved]: savedHotels.includes(hotel.hotel_id),
                         })}

@@ -4,7 +4,13 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../redux/selectors";
 
-export const SaveButton = ({ placeId, className = "", children }) => {
+export const SaveButton = ({
+  placeId,
+  className = "",
+  children,
+  itemType,
+  json,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [authWarning, setAuthWarning] = useState("");
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -48,7 +54,12 @@ export const SaveButton = ({ placeId, className = "", children }) => {
 
       {isModalOpen && (
         <Modal onClose={closeModal}>
-          <SaveToRouteModal onClose={closeModal} placeId={placeId} />
+          <SaveToRouteModal
+            onClose={closeModal}
+            placeId={placeId}
+            itemType={itemType}
+            json={json}
+          />
         </Modal>
       )}
     </>

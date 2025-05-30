@@ -26,12 +26,18 @@ const PlacePage = () => {
   if (!data) return null;
 
   console.log(data);
+  console.log(data.type);
+
   return (
     <div className={styles.page}>
       <div className={styles.topBar}>
         <BackButton backTo={backHrefLocation.current} />
         <PlaceHeader name={data.name} address={data.formatted_address} />
-        <SaveButton className={styles.saveButton}>
+        <SaveButton
+          className={styles.saveButton}
+          itemType={data.type}
+          placeId={placeId}
+        >
           <Save className={styles.icon} />
         </SaveButton>
       </div>

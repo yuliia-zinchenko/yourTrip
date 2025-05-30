@@ -96,7 +96,7 @@ export const TicketsResults = ({ data, departureName, arrivalName }) => {
                   </div>
                 </div>
               </div>
-              <Actions />
+              <Actions flightsJson={ticket} itemType={ticket.type} />
             </div>
           </div>
         );

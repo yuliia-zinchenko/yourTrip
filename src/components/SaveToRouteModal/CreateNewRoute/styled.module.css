@@ -1,0 +1,53 @@
+.icon {
+  width: 20px;
+  height: 20px;
+  color: green;
+}
+
+.cancel {
+  width: 25px;
+  height: 25px;
+  color: rgb(242, 101, 101);
+}
+
+.saveBtn:hover,
+.cancelBtn:hover {
+  transform: scale(1.2);
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.errorMessage {
+  color: rgb(234, 95, 95);
+  font-size: 12px;
+}
+
+.saveBtn,
+.cancelBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 8px;
+  transition: color 0.3s ease;
+}
+
+.input {
+  flex-grow: 1;
+  min-width: 0;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
