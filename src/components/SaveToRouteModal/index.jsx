@@ -1,5 +1,5 @@
 import styles from "./styled.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { LittleLoader } from "../Loader/LittleLoader";
 import { ReactComponent as Check } from "../../icons/check-lg.svg";
 import { ReactComponent as Cancel } from "../../icons/x.svg";
@@ -9,13 +9,8 @@ import {
   useCreateRouteMutation,
 } from "../../redux/routesApi/saveToRoute";
 
-export const SaveToRouteModal = ({ placeId, onClose }) => {
-  const { data, isLoading, error } = useGetRoutesQuery();
-  useEffect(() => {
-    console.log("isLoading:", isLoading);
-    console.log("data:", data);
-    console.log("error:", error);
-  }, [data, isLoading, error]);
+export const SaveToRouteModal = ({ placeId, itemType, onClose }) => {
+  const { data, isLoading } = useGetRoutesQuery();
   const [selectedRouteId, setSelectedRouteId] = useState(null);
   const [showNewRouteInput, setShowNewRouteInput] = useState(false);
   const [newRouteName, setNewRouteName] = useState("");
