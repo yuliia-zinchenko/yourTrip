@@ -10,28 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a58741cb-f05f-4835-8518-ae100870b03f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/RoutesResults/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RoutesResults/styled.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/arrow1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/arrow2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/arrow3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/arrow4.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/uiw--map.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HotelsForm/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HotelsForm/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HotelsResults/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HotelsResults/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Opportunities/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Opportunities/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Opportunities/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Opportunities/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlacesResults/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlacesResults/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlacesResults/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlacesResults/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopularPlaces/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopularPlaces/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ResultsContainer/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResultsContainer/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useCurrentUse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useCurrentUse.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HotelsPage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HotelsPage/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyRoutesPage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyRoutesPage/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HotelsResults/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HotelsResults/styled.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RoutesResults/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RoutesResults/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RoutesResults/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RoutesResults/styled.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +55,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Rebasing main",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/arturrubachenko/uni/yourTrip/src/icons",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",

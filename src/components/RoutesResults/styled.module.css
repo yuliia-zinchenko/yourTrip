@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     width: 250px;
+    height: 360px;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -56,33 +57,23 @@
     height: 24px;
 }
 
-.emptyCard {
-    width: 250px;
-    height: 360px;
-    border: 2px dashed #ccc;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #444;
-    background-color: #f9f6f2;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.emptyCard:hover {
-    background-color: #f0ece6;
-    transform: scale(1.03);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.plusIcon {
-    width: 48px;
-    height: 48px;
-}
 
 .arrow:hover{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform: scale(1.3);
 }
 
+.imagePlaceholder {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 18px;
+}
+.error{
+    color: red;
+}

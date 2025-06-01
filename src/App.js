@@ -15,6 +15,11 @@ const MyRoutesPage = lazy(() => import("./pages/MyRoutesPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 const EmailConfirmedPage = lazy(() => import("./pages/EmailConfirmedPage"));
 const PlacePage = lazy(() => import("./pages/PlacePage"));
+const SavedRoute = lazy(() =>
+    import("./pages/SavedRoute").then(module => ({ default: module.SavedRoute }))
+);
+
+
 
 function App() {
   const isFetchingCurrentUser = useSelector(
@@ -39,11 +44,21 @@ function App() {
           <Route
             path="routes"
             element={
-
+                <PrivateRoute>
                 <MyRoutesPage />
-
+                </PrivateRoute>
             }
           />
+
+            <Route
+                path="saved/:id"
+                element={
+                    <PrivateRoute>
+                        <SavedRoute/>
+                    </PrivateRoute>
+                }
+            />
+
           <Route
             path="profile"
             element={

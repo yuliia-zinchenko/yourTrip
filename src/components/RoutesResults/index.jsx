@@ -1,43 +1,56 @@
 import styles from "./styled.module.css";
-import Paris from "../../images/Paris.jpg";
 import { ReactComponent as Arrow } from "../../icons/arrow-right1.svg";
-import { ReactComponent as Plus } from "../../icons/plus.svg";
-import { Link } from "react-router-dom";
-
-const places = [
-    {
-        name: "Paris",
-        image: Paris,
-        placeId: "ChIJ8V4yqWf2phQRmeIvqHDCgXM",
-    },
-];
+import { Link, useNavigate } from "react-router-dom";
+import { useGetRoutesQuery } from "../../redux/routesApi/saveToRoute";
+import { Loader } from "../Loader";
+import {EmptyCard} from "../EmptyCard";
 
 export const Cards = () => {
+    const { data, isLoading, isError } = useGetRoutesQuery();
+    const navigate = useNavigate();
+
+    if (isLoading) return <div><Loader /></div>;
+    if (isError) return <div className={styles.error}>Error loading routes</div>;
+
+    const routes = data?.data || [];
+    const activeRoutes = routes.filter((route) => route.isCompleted === false);
+
+    const handleArrowClick = (e, id) => {
+        e.preventDefault();
+        e.stopPropagation();
+        navigate(`/travel/${id}`);
+    };
+
     return (
         <div className={styles.section}>
             <div className={styles.container}>
                 <h2 className={styles.title}>Your routes</h2>
                 <div className={styles.cards}>
-                    {places.map((place) => (
+                    {activeRoutes.map((route) => (
                         <Link
-                            key={place.placeId}
-                            to={`/place?place_id=${place.placeId}`}
+                            key={route.id}
+                            to={`/saved/${route.id}`}
                             className={styles.card}
                         >
-                            <img
-                                src={place.image}
-                                alt={place.name}
+
+                        <img
+                                src={route.imageUrl || "https://placehold.co/300x300"}
+                                alt={route.name}
                                 className={styles.cardImage}
                             />
                             <div className={styles.cardTitle}>
-                                {place.name} <Arrow className={styles.arrow} />
+                                {route.name}
+                                <Arrow
+                                    className={styles.arrow}
+                                    role="button"
+                                    aria-label={`Go to travel page for ${route.name}`}
+                                    onClick={(e) => handleArrowClick(e, route.id)}
+                                />
+
                             </div>
                         </Link>
                     ))}
-
-                    <Link to="/add-place" className={styles.emptyCard}>
-                        <Plus className={styles.plusIcon} />
-                    </Link>
+                   <EmptyCard/>
                 </div>
             </div>
         </div>

@@ -226,3 +226,7 @@
 .sortSelect:focus {
     border-color: #9c8b7a;
     box-shadow: 0 0 0 2px rgba(156,139, 122, 0.2)}
+
+.noResults{
+    color:red;
+}
