@@ -10,23 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a58741cb-f05f-4835-8518-ae100870b03f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EmptyCard/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EmptyCard/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EmptyCard/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EmptyCard/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ReviewForm/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReviewForm/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ReviewForm/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReviewForm/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RoutesResults/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RoutesResults/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SaveButton/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SaveButton/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SaveToRouteModal/CreateNewRoute/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SaveToRouteModal/CreateNewRoute/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SaveToRouteModal/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SaveToRouteModal/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyRoutesPage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyRoutesPage/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PlacePage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PlacePage/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PlacesPage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PlacesPage/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/SavedRoute/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SavedRoute/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/SavedRoute/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SavedRoute/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/routesApi/saveToRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/routesApi/saveToRoute.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

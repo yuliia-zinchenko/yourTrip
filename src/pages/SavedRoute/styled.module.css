@@ -43,7 +43,6 @@
   font-size: 18px;
 }
 
-
 .buttonFinishDiv{
     margin-top: 0;
     display: flex;
@@ -71,4 +70,5 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform: scale(1.03);
 }
+
 
