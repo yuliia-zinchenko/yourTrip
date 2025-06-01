@@ -8,6 +8,7 @@ import { LittleLoader } from "../../components/Loader/LittleLoader";
 import { ReactComponent as Building } from "../../icons/building.svg";
 import css from "./styled.module.css";
 
+
 const SearchHotels = () => {
     const [errorMsg, setError] = useState("");
 

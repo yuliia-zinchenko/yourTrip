@@ -47,6 +47,21 @@
 }
 
 .buttonFinishDiv{
+    margin-top: 0;
+    display: flex;
+    justify-content: flex-start; /* Вирівнювання ліворуч */
+    align-items: center; /* Вирівнювання по вертикалі (за потребою) */
+    flex-direction: row; /* Горизонтальне розташування (значення за замовчуванням) */
     margin-left: 730px;
 }
 
+.TrashSvg{
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+}
+
+.TrashSvg:hover{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.1);
+}

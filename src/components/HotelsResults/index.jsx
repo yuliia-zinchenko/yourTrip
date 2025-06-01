@@ -116,13 +116,6 @@ export const HotelsResults = ({
   return (
       <div className={styles.resultsWrap}>
         <div className={styles.topBar}>
-          <div className={styles.debugInfo}>
-            <p>Found: {hotels.length} hotels</p>
-            <p>
-              Page: {page} of {totalPages}
-            </p>
-          </div>
-
           <div className={styles.sortContainer}>
             <label htmlFor="sortSelect" className={styles.sortLabel}>
               Sort by:
