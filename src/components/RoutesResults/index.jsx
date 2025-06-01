@@ -54,7 +54,8 @@ export const Cards = ({ state }) => {
               </div>
             </Link>
           ))}
-          <EmptyCard />
+          <EmptyCard withModal />
+
         </div>
       </div>
     </div>

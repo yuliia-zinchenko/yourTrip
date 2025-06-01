@@ -55,8 +55,15 @@ export const routesApi = createApi({
     deleteRoute: builder.mutation({
       query: (id) => ({
         url: `/route/${id}`,
-        method: 'DELETE',
+        method: "DELETE",
       }),
+      invalidatesTags: ["Routes"],
+  }),
+    getSavedItemsByRoute: builder.query({
+      query: (routeId) => `/route/showRoute?routeId=${routeId}`,
+      providesTags: (result, error, routeId) => [
+        { type: "SavedItems", id: routeId },
+      ],
     }),
   }),
 });
@@ -68,4 +75,5 @@ export const {
   useAddHotelToRouteMutation,
   useAddTicketToRouteMutation,
   useDeleteRouteMutation,
+  useGetSavedItemsByRouteQuery, // <-- новий хук
 } = routesApi;

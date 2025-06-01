@@ -1,23 +1,21 @@
 import { EmptyCard } from "../EmptyCard";
 import styles from "./styled.module.css";
 import { TicketsResults } from "../TicketsResults";
-import { HotelsResults } from "../HotelsResults";
+import { SavedHotelsSimpleList } from "../HotelsResults/SavedHotelsSimpleList";
 import { PlacesResults } from "../PlacesResults";
 
 export const Section = ({
                             title,
                             items = [],
                             emptyLinkTo,
-                            type = "ticket", // "ticket", "hotel" або "place"
+                            type = "ticket",
                             departureName = "",
                             arrivalName = "",
-                            hasSearched = false, // для місць
-                            state = null // для місць (стан навігації)
+                            hasSearched = false,
+                            state,
                         }) => {
     const renderContent = () => {
-        if (items.length === 0) {
-            return <EmptyCard linkTo={emptyLinkTo} />;
-        }
+        if (!items || items.length === 0) return null;
 
         switch (type) {
             case "ticket":
@@ -29,11 +27,12 @@ export const Section = ({
                     />
                 );
             case "hotel":
-                return <HotelsResults hotels={items}/>;
+                return <SavedHotelsSimpleList hotels={items} />;
             case "place":
+                const filteredPlaces = items.filter(place => place != null);
                 return (
                     <PlacesResults
-                        places={items}
+                        places={filteredPlaces}
                         hasSearched={hasSearched}
                         state={state}
                     />
@@ -43,11 +42,14 @@ export const Section = ({
         }
     };
 
+
+
     return (
         <div className={styles.section}>
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.cardsWrapper}>
                 {renderContent()}
+                <EmptyCard linkTo={emptyLinkTo} />
             </div>
         </div>
     );
