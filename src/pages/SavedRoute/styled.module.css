@@ -72,12 +72,5 @@
 }
 
 
-.cardsWrapper {
-    display: flex;
-    flex-direction: row; /* Горизонтально */
-    flex-wrap: wrap;     /* Якщо потрібно переносити на новий рядок */
-    gap: 16px;           /* Відступи між картками */
-    align-items: flex-start;
-}
 
 
