@@ -101,7 +101,13 @@ export const TicketsResults = ({ data, departureName, arrivalName }) => {
           </div>
         );
       })}
-      <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
+      {page > 1 && (
+        <Pagination
+          page={page}
+          totalPages={totalPages}
+          onPageChange={setPage}
+        />
+      )}
     </>
   );
 };

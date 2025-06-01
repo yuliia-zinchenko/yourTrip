@@ -55,9 +55,24 @@ export const routesApi = createApi({
     deleteRoute: builder.mutation({
       query: (id) => ({
         url: `/route/${id}`,
-        method: 'DELETE',
+        method: "DELETE",
       }),
     }),
+    submitReview: builder.mutation({
+      query: ({ id: routeId, comment: review, rating }) => ({
+        url: `/Review/create`,
+        method: "POST",
+        body: { routeId, review, rating },
+      }),
+    }),
+    updateRouteImage: builder.mutation({
+      query: ({ id, imageUrl }) => ({
+        url: `/route/updateImage`,
+        method: "POST",
+        params: { imageUrl, id },
+      }),
+    }),
+    invalidatesTags: ["Routes"],
   }),
 });
 
@@ -68,4 +83,6 @@ export const {
   useAddHotelToRouteMutation,
   useAddTicketToRouteMutation,
   useDeleteRouteMutation,
+  useSubmitReviewMutation,
+  useUpdateRouteImageMutation,
 } = routesApi;

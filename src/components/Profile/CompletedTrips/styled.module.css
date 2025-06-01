@@ -3,13 +3,19 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  margin: 0 auto;
+  margin-bottom: 30px;
   background-color: #f5f5f5;
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.completedTripContainer:hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1.02);
+  cursor: pointer;
+}
 .name {
   margin-bottom: 30px;
 }
@@ -45,4 +51,33 @@
   border-radius: 5px;
   font-size: 0.8rem;
   display: inline-block;
+}
+
+.tripReviewBlock {
+  margin-top: 8px;
+}
+
+.tripReview {
+  font-style: italic;
+  color: #444;
+  margin-bottom: 4px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.tripStars {
+  color: #ffc107;
+  font-size: 18px;
+  margin-top: 4px;
 }

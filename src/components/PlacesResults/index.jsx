@@ -43,11 +43,15 @@ export const PlacesResults = ({ places, hasSearched, state }) => {
           ))}
         </div>
         {places.length !== 0 ? (
-          <Pagination
-            page={page}
-            totalPages={totalPages}
-            onPageChange={setPage}
-          />
+          <>
+            {page > 1 && (
+              <Pagination
+                page={page}
+                totalPages={totalPages}
+                onPageChange={setPage}
+              />
+            )}
+          </>
         ) : (
           <div className={styles.Start}>
             <p>Start searching now!</p>
