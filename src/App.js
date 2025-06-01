@@ -5,6 +5,9 @@ import { Loader } from "./components/Loader";
 import { useGetCurrentUserQuery } from "./redux/auth/authApi";
 import { useSelector } from "react-redux";
 import { ScrollToTop } from "./utils/ScrollToTop";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Layout = lazy(() => import("./components/Layout"));
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -33,6 +36,8 @@ function App() {
   }
 
   return (
+      <>
+          <ToastContainer position="top-right" autoClose={3000} />
     <Suspense fallback={<Loader />}>
       <ScrollToTop />
       <Routes>
@@ -74,6 +79,7 @@ function App() {
         <Route path="/email-confirm" element={<EmailConfirmedPage />} />
       </Routes>
     </Suspense>
+      </>
   );
 }
 

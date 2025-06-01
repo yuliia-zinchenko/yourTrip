@@ -57,6 +57,12 @@ export const routesApi = createApi({
         url: `/route/${id}`,
         method: "DELETE",
       }),
+      invalidatesTags: ["Routes"],
+    }),
+    getSavedItemsByRoute: builder.query({
+      query: (routeId) => `/route/showRoute?routeId=${routeId}`,
+      providesTags: (routeId) => [{ type: "SavedItems", id: routeId }],
+      invalidatesTags: ["Routes"],
     }),
     submitReview: builder.mutation({
       query: ({ id: routeId, comment: review, rating }) => ({
@@ -85,4 +91,5 @@ export const {
   useDeleteRouteMutation,
   useSubmitReviewMutation,
   useUpdateRouteImageMutation,
+  useGetSavedItemsByRouteQuery,
 } = routesApi;

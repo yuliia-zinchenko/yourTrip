@@ -12,10 +12,37 @@
     margin-bottom: 24px;
 }
 
+.littleCard{
+    display: flex;
+    flex-direction: row;
+    background: #f8f5f0;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px #e3dfd6;
+    overflow: hidden;
+    align-items: stretch;
+    padding: 0;
+    min-height: 380px;
+    max-width: 40%;
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.littleCard:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cardFooter{
+    margin-top: 70px;
+    justify-items: flex-end;
+}
+
+
+
 .imgWrap {
     flex-shrink: 0;
-    width: 200px;
-    height: 260px;
+    width: 250px;
+    height: 350px;
     border-radius: 16px;
     overflow: hidden;
     margin: 16px;

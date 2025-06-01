@@ -54,9 +54,9 @@
 .buttonFinishDiv {
   margin-top: 0;
   display: flex;
-  justify-content: flex-start; /* Вирівнювання ліворуч */
-  align-items: center; /* Вирівнювання по вертикалі (за потребою) */
-  flex-direction: row; /* Горизонтальне розташування (значення за замовчуванням) */
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
   margin-left: 730px;
 }
 
@@ -82,35 +82,6 @@
 .imageUpdateBlock {
   margin: 20px 0;
 }
-
-.imageEditForm {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.imageInput {
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-.imageButtons {
-  display: flex;
-  gap: 10px;
-}
-
-.saveBtn,
-.cancelBtn,
-.imageEditBtn {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
 .saveBtn {
   background-color: #007bff;
   color: white;
@@ -130,7 +101,7 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 👈 це перемістить блок редагування вправо */
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -150,16 +121,8 @@
 .imageEditForm {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* 👈 вирівнює вміст праворуч */
+  align-items: flex-end;
   gap: 8px;
-}
-
-.imageInput {
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  width: 200px;
 }
 
 .imageButtons {
@@ -176,14 +139,6 @@
   font-size: 14px;
   margin-left: 8px;
   transition: color 0.3s ease;
-}
-
-.saveBtn {
-  background-color: transparent;
-}
-
-.cancelBtn {
-  background-color: transparent;
 }
 
 .saveBtn:hover,
@@ -230,14 +185,6 @@
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
-}
-
-.saveBtn,
-.cancelBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
 }
 
 .icon {
