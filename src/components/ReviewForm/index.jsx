@@ -18,8 +18,6 @@ export const ReviewForm = ({ onSubmit }) => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <h2>Залишити відгук</h2>
-
       <div className={styles.stars}>
         {[1, 2, 3, 4, 5].map((star) => (
           <FaStar
@@ -37,13 +35,13 @@ export const ReviewForm = ({ onSubmit }) => {
       <textarea
         className={styles.textarea}
         rows="4"
-        placeholder="Ваш коментар..."
+        placeholder="Share your impressions "
         value={comment}
         onChange={(e) => setComment(e.target.value)}
       />
 
       <button className={styles.button} type="submit">
-        Надіслати
+        Save
       </button>
     </form>
   );

@@ -9,7 +9,7 @@ import {
   useAddTicketToRouteMutation,
 } from "../../redux/routesApi/saveToRoute";
 
-export const SaveToRouteModal = ({ placeId, itemType, json, onClose }) => {
+export const SaveToRouteModal = ({ itemType, json, onClose }) => {
   const { data, isLoading, refetch } = useGetRoutesQuery();
   const [showNewRouteInput, setShowNewRouteInput] = useState(false);
   const [addPlaceToRoute] = useAddPlaceToRouteMutation();
@@ -20,7 +20,7 @@ export const SaveToRouteModal = ({ placeId, itemType, json, onClose }) => {
   const addItemToRoute = async (routeId) => {
     try {
       if (itemType === "Place") {
-        await addPlaceToRoute({ routeId, placeId });
+        await addPlaceToRoute({ routeId, json });
       } else if (itemType === "Hotel") {
         await addHotelToRoute({ routeId, json });
       } else if (itemType === "flight-offer") {

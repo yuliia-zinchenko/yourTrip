@@ -7,7 +7,6 @@ import { ResultsContainer } from "../../components/ResultsContainer";
 import { LittleLoader } from "../../components/Loader/LittleLoader";
 import css from "./styled.module.css";
 import { PlacesResults } from "../../components/PlacesResults";
-// import { ReactComponent as Place } from "../../icons/geo-alt-fill.svg";
 import { useEffect, useCallback, useRef } from "react";
 
 const SearchPlaces = () => {
@@ -59,6 +58,7 @@ const SearchPlaces = () => {
           onClear={clearPlaces}
         />
       </MainPicture>
+
       <ResultsContainer ref={resultsRef}>
         {isLoading && <LittleLoader />}
         {error && <p className={css.error}>Error fetching places</p>}
@@ -69,12 +69,6 @@ const SearchPlaces = () => {
             state={{ from: currentLocation }}
           />
         )}
-        {/* {!isLoading && !error && !data && (
-          <div className={css.Start}>
-            <p>Start searching now!</p>
-            <Place className={css.Place} />
-          </div>
-        )} */}
       </ResultsContainer>
     </>
   );

@@ -4,7 +4,7 @@ import { ReactComponent as Cancel } from "../../../icons/x.svg";
 import { useCreateRouteMutation } from "../../../redux/routesApi/saveToRoute";
 import { useState } from "react";
 
-export const CreateNewRoute = ({ onClose, onSuccess }) => {
+export const CreateNewRoute = ({ onClose, onSuccess, children }) => {
   const [newRouteName, setNewRouteName] = useState("");
   const [createRoute] = useCreateRouteMutation();
   const [errorMessage, setErrorMessage] = useState("");
@@ -26,7 +26,7 @@ export const CreateNewRoute = ({ onClose, onSuccess }) => {
 
     try {
       await createRoute({ name: trimmedName }).unwrap();
-      onSuccess(); // закриває і оновлює
+      onSuccess();
     } catch (err) {
       console.error("Error. Cannot create new route", err);
       setErrorMessage("Error while creating the route");
@@ -34,11 +34,12 @@ export const CreateNewRoute = ({ onClose, onSuccess }) => {
   };
 
   const handleClick = () => {
-    onClose(); // просто закриває без дій
+    onClose();
   };
 
   return (
     <>
+      {children}
       <div className={styles.inputRow}>
         <input
           type="text"
