@@ -37,7 +37,7 @@
   margin-left: 0;
   background-color: transparent;
   border: none;
-  color: #007bff;
+  color: #52443b;
   cursor: pointer;
   margin-bottom: 12px;
   text-decoration: underline;
@@ -47,34 +47,7 @@
 }
 
 .newRouteBtn:hover {
-  color: #0056b3;
-}
-
-.input {
-  flex-grow: 1;
-  min-width: 0;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  font-size: 14px;
-}
-
-.actions {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.saveBtn,
-.cancelBtn {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  margin-left: 8px;
-  transition: color 0.3s ease;
+  color: #71635a;
 }
 
 .titleRow {
@@ -109,27 +82,8 @@
   color: #a58a62;
 }
 
-.icon {
-  width: 20px;
-  height: 20px;
-  color: green;
-}
-
-.cancel {
-  width: 25px;
-  height: 25px;
-  color: rgb(242, 101, 101);
-}
-
-.saveButton:hover,
 .cancelButton:hover {
   transform: scale(1.2);
-}
-
-.inputRow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .errorMessage {
@@ -138,16 +92,17 @@
 }
 
 .routeButton {
-  background-color: white;
-  border: 1px solid #007bff;
-  color: #007bff;
+  background-color: transparent;
+  border: none;
+  color: #5a4f40;
+  font-size: 15px;
+  border-radius: 8px;
   padding: 8px 12px;
   margin-bottom: 8px;
-  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .routeButton:hover {
-  background-color: #e6f0ff;
+  background-color: #d7cfc2;
 }

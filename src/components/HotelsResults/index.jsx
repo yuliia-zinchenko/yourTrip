@@ -116,6 +116,13 @@ export const HotelsResults = ({
   return (
       <div className={styles.resultsWrap}>
         <div className={styles.topBar}>
+          <div className={styles.debugInfo}>
+            <p>Found: {hotels.length} hotels</p>
+            <p>
+              Page: {page} of {totalPages}
+            </p>
+          </div>
+
           <div className={styles.sortContainer}>
             <label htmlFor="sortSelect" className={styles.sortLabel}>
               Sort by:
@@ -189,6 +196,8 @@ export const HotelsResults = ({
                             <ArrowIcon className={styles.ArrowIcon} />
                           </a>
                           <SaveButton
+                              json={hotel}
+                              itemType={hotel.type}
                               className={clsx(styles.saveBtn, {
                                 [styles.saved]: savedHotels.includes(hotel.hotel_id),
                               })}
@@ -211,7 +220,6 @@ export const HotelsResults = ({
             );
           })}
         </div>
-
         <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
       </div>
   );

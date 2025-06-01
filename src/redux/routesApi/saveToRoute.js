@@ -21,18 +21,34 @@ export const routesApi = createApi({
       providesTags: ["Routes"],
     }),
     createRoute: builder.mutation({
-      query: (body) => ({
+      query: ({ name }) => ({
         url: "/route",
         method: "POST",
-        body,
+        body: { name },
       }),
       invalidatesTags: ["Routes"],
     }),
     addPlaceToRoute: builder.mutation({
       query: ({ routeId, placeId }) => ({
-        url: `/route/${routeId}/places`,
+        url: `Saved/places`,
         method: "POST",
-        body: { placeId },
+        params: { routeId, placeId },
+      }),
+      invalidatesTags: ["Routes"],
+    }),
+    addHotelToRoute: builder.mutation({
+      query: ({ routeId, json }) => ({
+        url: `Saved/hotel`,
+        method: "POST",
+        body: { routeId, json: JSON.stringify(json) },
+      }),
+      invalidatesTags: ["Routes"],
+    }),
+    addTicketToRoute: builder.mutation({
+      query: ({ routeId, json }) => ({
+        url: `Saved/flights`,
+        method: "POST",
+        body: { routeId, json: JSON.stringify(json) },
       }),
       invalidatesTags: ["Routes"],
     }),
@@ -43,4 +59,6 @@ export const {
   useGetRoutesQuery,
   useCreateRouteMutation,
   useAddPlaceToRouteMutation,
+  useAddHotelToRouteMutation,
+  useAddTicketToRouteMutation,
 } = routesApi;
