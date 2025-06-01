@@ -1,50 +1,48 @@
-.page{
-    margin: 0 !important;
-    padding: 0 !important;
-    text-align: left !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-}
-
-.routeName {
-    font-size: 38px;
-    font-weight: bold;
+.page {
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
 }
 
 .header {
-    display: flex;
-    justify-content: flex-start; /* Вирівнювання ліворуч */
-    align-items: center; /* Вирівнювання по вертикалі (за потребою) */
-    flex-direction: row; /* Горизонтальне розташування (значення за замовчуванням) */
-    gap: 700px; /* Відступ між елементами */
-    width: 100%; /* Займає всю доступну ширину */
-    margin: 0;
-    padding: 0;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-
-.button, .buttonFinish {
-    background: #fff;
-    border: none;
-    border-radius: 16px;
-    padding: 8px 20px;
-    font-family: 'Merriweather', serif;
-    font-weight: 600;
-    color: #707070;
-    box-shadow: 0 4px 16px #e3dfd6;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: box-shadow 0.15s;
-    font-size: 18px;
+.routeName {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.button:hover, .buttonFinish:hover {
-    box-shadow: 0 8px 24px #e3dfd6;
-    color: #3d3933;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform: scale(1.03);
+.button,
+.buttonFinish {
+  background: #fff;
+  margin-left: auto;
+  border: none;
+  border-radius: 16px;
+  padding: 8px 20px;
+  font-family: "Merriweather", serif;
+  font-weight: 600;
+  color: #707070;
+  box-shadow: 0 4px 16px #e3dfd6;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+  font-size: 18px;
 }
+
 
 .buttonFinishDiv{
     margin-top: 0;
@@ -61,7 +59,16 @@
     margin-left: 20px;
 }
 
-.TrashSvg:hover{
+.TrashSvg:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform: scale(1.1);
 }
+
+.button:hover,
+.buttonFinish:hover {
+  box-shadow: 0 8px 24px #e3dfd6;
+  color: #3d3933;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1.03);
+}
+

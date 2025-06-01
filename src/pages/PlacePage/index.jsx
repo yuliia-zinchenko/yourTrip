@@ -28,6 +28,12 @@ const PlacePage = () => {
   console.log(data);
   console.log(data.type);
 
+  const json = {
+    placeId,
+    name: data.name,
+    photo: data.photoUrl?.[0] ?? null,
+  };
+
   return (
     <div className={styles.page}>
       <div className={styles.topBar}>
@@ -36,7 +42,7 @@ const PlacePage = () => {
         <SaveButton
           className={styles.saveButton}
           itemType={data.type}
-          placeId={placeId}
+          json={json}
         >
           <Save className={styles.icon} />
         </SaveButton>

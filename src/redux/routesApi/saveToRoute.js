@@ -29,10 +29,10 @@ export const routesApi = createApi({
       invalidatesTags: ["Routes"],
     }),
     addPlaceToRoute: builder.mutation({
-      query: ({ routeId, placeId }) => ({
+      query: ({ routeId, json }) => ({
         url: `Saved/places`,
         method: "POST",
-        params: { routeId, placeId },
+        body: { routeId, json: JSON.stringify(json) },
       }),
       invalidatesTags: ["Routes"],
     }),
