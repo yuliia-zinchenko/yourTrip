@@ -7,14 +7,22 @@
 }
 
 .header {
-  position: relative;
-  width: 100%;
   display: flex;
   align-items: center;
-  padding: 0 20px;
-  box-sizing: border-box;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
+.tripLabel {
+  background-color: #8ab58c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  display: inline-block;
+  cursor: default;
+}
 .routeName {
   position: absolute;
   left: 50%;
@@ -43,24 +51,24 @@
   font-size: 18px;
 }
 
-.buttonFinishDiv{
-    margin-top: 0;
-    display: flex;
-    justify-content: flex-start; /* Вирівнювання ліворуч */
-    align-items: center; /* Вирівнювання по вертикалі (за потребою) */
-    flex-direction: row; /* Горизонтальне розташування (значення за замовчуванням) */
-    margin-left: 730px;
+.buttonFinishDiv {
+  margin-top: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 730px;
 }
 
-.TrashSvg{
-    width: 35px;
-    height: 35px;
-    margin-left: 20px;
+.TrashSvg {
+  width: 35px;
+  height: 35px;
+  margin-left: 20px;
 }
 
 .TrashSvg:hover {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform: scale(1.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1.1);
 }
 
 .button:hover,
@@ -72,5 +80,122 @@
 }
 
 
+.imageUpdateBlock {
+  margin: 20px 0;
+}
+.saveBtn {
+  background-color: #007bff;
+  color: white;
+}
 
 
+.cancelBtn {
+  background-color: #ddd;
+}
+
+.imageEditBtn {
+  background-color: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+  margin-left: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.routeName {
+  flex-grow: 1;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.imageUpdateBlock {
+  display: flex;
+  align-items: center;
+}
+
+.imageEditForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.imageButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.saveBtn,
+.cancelBtn,
+.imageEditBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 8px;
+  transition: color 0.3s ease;
+}
+
+.saveBtn:hover,
+.cancelBtn:hover {
+  transform: scale(1.2);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: green;
+}
+
+.cancel {
+  width: 25px;
+  height: 25px;
+  color: rgb(242, 101, 101);
+}
+
+.imageEditBtn {
+  background-color: transparent;
+  border: 1px solid #957230;
+  color: #957230;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.error {
+  color: rgb(234, 95, 95);
+  font-size: 14px;
+}
+
+.imageEditRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.imageInput {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.tickets{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

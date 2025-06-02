@@ -4,6 +4,7 @@
 }
 
 .cards {
+  margin-bottom: 30px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
@@ -70,4 +71,16 @@
 .Place {
   width: 60px;
   height: 60px;
+}
+.cardWrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }

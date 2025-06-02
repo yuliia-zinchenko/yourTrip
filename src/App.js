@@ -17,12 +17,14 @@ const SearchPlaces = lazy(() => import("./pages/PlacesPage"));
 const MyRoutesPage = lazy(() => import("./pages/MyRoutesPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 const EmailConfirmedPage = lazy(() => import("./pages/EmailConfirmedPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+
 const PlacePage = lazy(() => import("./pages/PlacePage"));
 const SavedRoute = lazy(() =>
-    import("./pages/SavedRoute").then(module => ({ default: module.SavedRoute }))
+  import("./pages/SavedRoute").then((module) => ({
+    default: module.SavedRoute,
+  }))
 );
-
-
 
 function App() {
   const isFetchingCurrentUser = useSelector(
@@ -49,20 +51,20 @@ function App() {
           <Route
             path="routes"
             element={
-                <PrivateRoute>
+              <PrivateRoute>
                 <MyRoutesPage />
-                </PrivateRoute>
+              </PrivateRoute>
             }
           />
 
-            <Route
-                path="saved/:id"
-                element={
-                    <PrivateRoute>
-                        <SavedRoute/>
-                    </PrivateRoute>
-                }
-            />
+          <Route
+            path="saved/:id"
+            element={
+              <PrivateRoute>
+                <SavedRoute />
+              </PrivateRoute>
+            }
+          />
 
           <Route
             path="profile"
@@ -72,7 +74,7 @@ function App() {
               </PrivateRoute>
             }
           />
-          {/* <Route path="profile" element={<ProfilePage />} /> */}
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
         <Route path="/email-confirm" element={<EmailConfirmedPage />} />
       </Routes>

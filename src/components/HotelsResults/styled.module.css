@@ -21,7 +21,7 @@
     overflow: hidden;
     align-items: stretch;
     padding: 0;
-    min-height: 380px;
+    min-height: 250px;
     max-width: 40%;
     margin-bottom: 24px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;

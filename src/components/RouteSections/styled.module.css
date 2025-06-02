@@ -1,5 +1,48 @@
-.title{
-    margin-top: 20px;
-    margin-bottom: 10px;
+.title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.trashButton {
+  border-radius: 5px;
+  background: white;
+  border: none;
+  padding: 4px;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.trashButton:hover{
+  background-color: indianred;
+}
+
+.tickets .ticketCard {
+  margin-bottom: 15px;
+  display: flex;
+ align-items: center;
+}
+.actionWrapper {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: flex-end;
+  width: 40px; /* або інше фіксоване значення */
+  height: 40px;
+}
+.actionWrapper:hover{
+  transform: scale(1.03);
+}
+
+.actionWrapper svg{
+  width: 30px;
+  height: 30px;
+}
+
+.emptyTicketCard{
+  margin-top: 10px;
+  width: 600px!important;
+  height: 100px;
+}

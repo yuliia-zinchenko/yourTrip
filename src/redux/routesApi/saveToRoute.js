@@ -58,13 +58,73 @@ export const routesApi = createApi({
         method: "DELETE",
       }),
       invalidatesTags: ["Routes"],
-  }),
+    }),
     getSavedItemsByRoute: builder.query({
       query: (routeId) => `/route/showRoute?routeId=${routeId}`,
-      providesTags: (result, error, routeId) => [
+      providesTags: (routeId) => [{ type: "SavedItems", id: routeId }],
+      invalidatesTags: ["Routes"],
+    }),
+    submitReview: builder.mutation({
+      query: ({ id: routeId, comment: review, rating }) => ({
+        url: `/Review/create`,
+        method: "POST",
+        body: { routeId, review, rating },
+      }),
+    }),
+    deleteSavedFlights: builder.mutation({
+      query: ({ id, routeId, type }) => ({
+        url: `/Saved/deleteFlighrs`,
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: { id, routeId, type },
+      }),
+      invalidatesTags: (result, error, { routeId }) => [
         { type: "SavedItems", id: routeId },
       ],
     }),
+
+    deleteSavedHotel: builder.mutation({
+      query: ({ id, routeId, type }) => ({
+        url: `/Saved/deleteHotels`,
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: { id, routeId, type },
+      }),
+      invalidatesTags: (result, error, { routeId }) => [
+        { type: "SavedItems", id: routeId },
+      ],
+    }),
+
+    deleteSavedPlace: builder.mutation({
+      query: ({ id, routeId, type }) => ({
+        url: `/Saved/deletePlaces`,
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: { id, routeId, type },
+      }),
+      invalidatesTags: (result, error, { routeId }) => [
+        { type: "SavedItems", id: routeId },
+      ],
+    }),
+
+
+
+
+
+    updateRouteImage: builder.mutation({
+      query: ({ id, imageUrl }) => ({
+        url: `/route/updateImage`,
+        method: "POST",
+        params: { imageUrl, id },
+      }),
+    }),
+    invalidatesTags: ["Routes"],
   }),
 });
 
@@ -75,5 +135,10 @@ export const {
   useAddHotelToRouteMutation,
   useAddTicketToRouteMutation,
   useDeleteRouteMutation,
-  useGetSavedItemsByRouteQuery, // <-- новий хук
+  useSubmitReviewMutation,
+  useUpdateRouteImageMutation,
+  useGetSavedItemsByRouteQuery,
+  useDeleteSavedPlaceMutation,
+  useDeleteSavedHotelMutation,
+  useDeleteSavedFlightsMutation,
 } = routesApi;
