@@ -13,50 +13,57 @@ import {
   useSubmitReviewMutation,
   useUpdateRouteImageMutation,
   useGetSavedItemsByRouteQuery,
+  useDeleteSavedPlaceMutation,
+  useDeleteSavedHotelMutation,
+  useDeleteSavedFlightsMutation,
 } from "../../redux/routesApi/saveToRoute";
 import { Loader } from "../../components/Loader";
 import { ReactComponent as Trash } from "../../icons/trash.svg";
 import { toast } from "react-toastify";
 import { ConfirmDeleteModal } from "../../components/Modal/ConfirmDeleteModal";
-import { SavedHotelsSimpleList } from "../../components/HotelsResults/SavedHotelsSimpleList";
 import styles from "./styled.module.css";
 
 export const SavedRoute = () => {
-  const { id } = useParams();
+  const { id: routeId } = useParams();
   const navigate = useNavigate();
+  const currentLocation = useLocation();
+  const backHrefLocation = useRef(currentLocation.state?.from ?? "/");
+
   const {
     data: allRoutesData,
     isLoading: routesLoading,
     isError: routesError,
   } = useGetRoutesQuery();
+
   const {
     data: savedItemsResponse,
     isLoading: savedLoading,
     isError: savedError,
-  } = useGetSavedItemsByRouteQuery(id);
+  } = useGetSavedItemsByRouteQuery(routeId);
+
   const [deleteRoute] = useDeleteRouteMutation();
-  const [showModal, setShowModal] = useState(false);
-  const currentLocation = useLocation();
-  const backHrefLocation = useRef(currentLocation.state?.from ?? "/");
   const [submitReview] = useSubmitReviewMutation();
+  const [updateRouteImage] = useUpdateRouteImageMutation();
+  const [deleteSavedPlace] = useDeleteSavedPlaceMutation();
+  const [deleteSavedHotel] = useDeleteSavedHotelMutation();
+  const [deleteSavedFlights] = useDeleteSavedFlightsMutation();
+  const [showModal, setShowModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const [editImage, setEditImage] = useState(false);
   const [imageInput, setImageInput] = useState("");
-  const [updateRouteImage] = useUpdateRouteImageMutation();
   const [imageError, setImageError] = useState(null);
 
-  const validateImageUrl = (url) => {
-    return /\.(jpeg|jpg|gif|png|webp|bmp|svg)$/.test(url);
-  };
+  const validateImageUrl = (url) =>
+    /\.(jpeg|jpg|gif|png|webp|bmp|svg)$/.test(url);
+
   const handleImageSave = async () => {
     if (!validateImageUrl(imageInput)) {
       setImageError("Please enter a valid image URL.");
       return;
     }
-
     try {
-      await updateRouteImage({ id, imageUrl: imageInput }).unwrap();
+      await updateRouteImage({ id: routeId, imageUrl: imageInput }).unwrap();
       toast.success("Image updated successfully!");
       setEditImage(false);
       setImageError(null);
@@ -67,13 +74,38 @@ export const SavedRoute = () => {
   };
 
   const handleReviewSubmit = async ({ rating, comment }) => {
-    if (!id || !rating || !comment.trim()) return;
+    if (!routeId || !rating || !comment.trim()) return;
 
     try {
-      await submitReview({ id, rating, comment }).unwrap();
+      await submitReview({ id: routeId, rating, comment }).unwrap();
       setShowModal(false);
     } catch (error) {
       console.error("Failed to submit review:", error);
+    }
+  };
+
+  const handleDeleteSavedItem = async (item) => {
+    const deleteData = {
+      id: item.id,
+      routeId: routeId,
+      type: item.type,
+    };
+
+    try {
+      if (item.type === "Place") {
+        await deleteSavedPlace(deleteData).unwrap();
+      } else if (item.type === "Hotel") {
+        await deleteSavedHotel(deleteData).unwrap();
+      } else if (item.type === "Flight") {
+        await deleteSavedFlights(deleteData).unwrap();
+      } else {
+        throw new Error("Unknown item type");
+      }
+
+      toast.success(`${item.type} deleted successfully!`);
+    } catch (error) {
+      toast.error(`Failed to delete ${item.type}`);
+      console.error("Delete error:", error);
     }
   };
 
@@ -88,7 +120,7 @@ export const SavedRoute = () => {
   }
 
   const routes = allRoutesData?.data || [];
-  const route = routes.find((r) => String(r.id) === id);
+  const route = routes.find((r) => String(r.id) === routeId);
   if (!route) {
     return <div className={styles.error}>Route not found</div>;
   }
@@ -112,26 +144,33 @@ export const SavedRoute = () => {
 
   const savedFlights = parsedItems
     .filter((item) => item.type === "Flight")
-    .map((item) => item.data);
+    .map((item) => ({
+      ...item.data,
+      id: item.id,
+      type: item.type,
+    }));
 
   const savedHotels = parsedItems
     .filter((item) => item.type === "Hotel")
-    .map((item) => item.data);
+    .map((item) => ({
+      ...item.data,
+      id: item.id,
+      type: item.type,
+    }));
 
   const savedPlaces = parsedItems
     .filter((item) => item.type === "Place")
-    .map((item) => {
-      const { placeId, name, photo } = item.data;
-      return {
-        place_id: placeId,
-        name: name,
-        photoUrl: photo,
-      };
-    });
+    .map((item) => ({
+      id: item.id,
+      place_id: item.data.placeId,
+      name: item.data.name,
+      photoUrl: item.data.photo,
+      type: item.type,
+    }));
 
   const handleDeleteRoute = async () => {
     try {
-      await deleteRoute(id).unwrap();
+      await deleteRoute(routeId).unwrap();
       toast.success("Route deleted successfully");
       navigate("/routes");
     } catch (error) {
@@ -196,7 +235,8 @@ export const SavedRoute = () => {
             savedFlights[0]?.itineraries?.[0]?.segments?.slice(-1)[0]?.arrival
               ?.iataCode
           }
-          isCompleted={route.isCompleted}
+          routeId={routeId}
+          onDeleteItem={handleDeleteSavedItem}
         />
 
         <Section
@@ -204,8 +244,8 @@ export const SavedRoute = () => {
           items={savedHotels}
           emptyLinkTo="/hotels"
           type="hotel"
-          component={SavedHotelsSimpleList}
-          isCompleted={route.isCompleted}
+          routeId={routeId}
+          onDeleteItem={handleDeleteSavedItem}
         />
 
         <Section
@@ -215,8 +255,10 @@ export const SavedRoute = () => {
           type="place"
           hasSearched={true}
           state={{ from: currentLocation }}
-          isCompleted={route.isCompleted}
+          routeId={routeId}
+          onDeleteItem={handleDeleteSavedItem}
         />
+
         <div className={styles.buttonFinishDiv}>
           {route.isCompleted ? (
             <span className={styles.tripLabel}>Completed</span>
@@ -241,6 +283,7 @@ export const SavedRoute = () => {
           />
         </div>
       </div>
+
       <ConfirmDeleteModal
         isOpen={showDeleteModal}
         onConfirm={() => {

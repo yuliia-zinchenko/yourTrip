@@ -2,7 +2,7 @@ import styles from "../HotelsResults/styled.module.css";
 import { ReactComponent as LocationIcon } from "../../icons/geo-alt-fill.svg";
 import { ReactComponent as ArrowIcon } from "../../icons/arrow-right1.svg";
 
-export const SavedHotelsSimpleList = ({ hotels }) => {
+export const SavedHotelsSimpleList = ({ hotels, renderActions }) => {
     if (!hotels || hotels.length === 0) {
         return <div className={styles.noResults}>No saved hotels</div>;
     }
@@ -45,6 +45,7 @@ export const SavedHotelsSimpleList = ({ hotels }) => {
                                     >
                                         <ArrowIcon className={styles.ArrowIcon} />
                                     </a>
+                                    {renderActions && renderActions(hotel)}
                                 </div>
                             </div>
                         </div>

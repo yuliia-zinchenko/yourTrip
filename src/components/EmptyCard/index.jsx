@@ -5,7 +5,7 @@ import { Modal } from "../Modal";
 import { CreateNewRoute } from "../SaveToRouteModal/CreateNewRoute";
 import styles from "./styled.module.css";
 
-export const EmptyCard = ({ linkTo, withModal = false }) => {
+export const EmptyCard = ({ linkTo, withModal = false, className }) => {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
 
@@ -18,23 +18,27 @@ export const EmptyCard = ({ linkTo, withModal = false }) => {
   };
 
   return (
-    <>
-      <button onClick={handleClick} className={styles.emptyCard}>
-        <Plus className={styles.plusIcon} />
-      </button>
+      <>
+        <button
+            onClick={handleClick}
+            className={`${styles.emptyCard} ${className || ""}`} // додали клас
+        >
 
-      {withModal && showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <div className={styles.modalContent}>
-            <CreateNewRoute
-              onClose={() => setShowModal(false)}
-              onSuccess={() => setShowModal(false)}
-            >
-              <h2 className={styles.modalTitle}>Create a New Route</h2>
-            </CreateNewRoute>
-          </div>
-        </Modal>
-      )}
-    </>
+          <Plus className={styles.plusIcon}/>
+        </button>
+
+        {withModal && showModal && (
+            <Modal onClose={() => setShowModal(false)}>
+              <div className={styles.modalContent}>
+                <CreateNewRoute
+                    onClose={() => setShowModal(false)}
+                    onSuccess={() => setShowModal(false)}
+                >
+                  <h2 className={styles.modalTitle}>Create a New Route</h2>
+                </CreateNewRoute>
+              </div>
+            </Modal>
+        )}
+      </>
   );
 };

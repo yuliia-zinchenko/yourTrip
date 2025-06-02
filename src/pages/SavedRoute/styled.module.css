@@ -79,6 +79,7 @@
   transform: scale(1.03);
 }
 
+
 .imageUpdateBlock {
   margin: 20px 0;
 }
@@ -86,6 +87,7 @@
   background-color: #007bff;
   color: white;
 }
+
 
 .cancelBtn {
   background-color: #ddd;
@@ -190,4 +192,10 @@
 .icon {
   width: 20px;
   height: 20px;
+}
+
+.tickets{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

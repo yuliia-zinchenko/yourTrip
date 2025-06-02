@@ -81,6 +81,52 @@ export const routesApi = createApi({
       }),
       invalidatesTags: ["Routes", "Achievements"],
     }),
+    deleteSavedFlights: builder.mutation({
+      query: ({ id, routeId, type }) => ({
+        url: `/Saved/deleteFlighrs`,
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: { id, routeId, type },
+      }),
+      invalidatesTags: (result, error, { routeId }) => [
+        { type: "SavedItems", id: routeId },
+      ],
+    }),
+
+    deleteSavedHotel: builder.mutation({
+      query: ({ id, routeId, type }) => ({
+        url: `/Saved/deleteHotels`,
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: { id, routeId, type },
+      }),
+      invalidatesTags: (result, error, { routeId }) => [
+        { type: "SavedItems", id: routeId },
+      ],
+    }),
+
+    deleteSavedPlace: builder.mutation({
+      query: ({ id, routeId, type }) => ({
+        url: `/Saved/deletePlaces`,
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: { id, routeId, type },
+      }),
+      invalidatesTags: (result, error, { routeId }) => [
+        { type: "SavedItems", id: routeId },
+      ],
+    }),
+
+
+
+
+
     updateRouteImage: builder.mutation({
       query: ({ id, imageUrl }) => ({
         url: `/route/updateImage`,
@@ -105,4 +151,7 @@ export const {
   useSubmitReviewMutation,
   useUpdateRouteImageMutation,
   useGetSavedItemsByRouteQuery,
+  useDeleteSavedPlaceMutation,
+  useDeleteSavedHotelMutation,
+  useDeleteSavedFlightsMutation,
 } = routesApi;
