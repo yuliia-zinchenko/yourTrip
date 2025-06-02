@@ -35,7 +35,7 @@ export const routesApi = createApi({
         body: { routeId, json: JSON.stringify(json) },
       }),
       invalidatesTags: (result, error, { routeId }) => [
-        { type: "Routes" },
+        "Routes",
         { type: "SavedItems", id: routeId },
       ],
     }),
@@ -46,7 +46,7 @@ export const routesApi = createApi({
         body: { routeId, json: JSON.stringify(json) },
       }),
       invalidatesTags: (result, error, { routeId }) => [
-        { type: "Routes" },
+        "Routes",
         { type: "SavedItems", id: routeId },
       ],
     }),
@@ -57,7 +57,7 @@ export const routesApi = createApi({
         body: { routeId, json: JSON.stringify(json) },
       }),
       invalidatesTags: (result, error, { routeId }) => [
-        { type: "Routes" },
+        "Routes",
         { type: "SavedItems", id: routeId },
       ],
     }),
@@ -70,8 +70,9 @@ export const routesApi = createApi({
     }),
     getSavedItemsByRoute: builder.query({
       query: (routeId) => `/route/showRoute?routeId=${routeId}`,
-      providesTags: (routeId) => [{ type: "SavedItems", id: routeId }],
-      invalidatesTags: ["Routes"],
+      providesTags: (result, error, routeId) => [
+        { type: "SavedItems", id: routeId },
+      ],
     }),
     submitReview: builder.mutation({
       query: ({ id: routeId, comment: review, rating }) => ({
@@ -92,6 +93,7 @@ export const routesApi = createApi({
       }),
       invalidatesTags: (result, error, { routeId }) => [
         { type: "SavedItems", id: routeId },
+        { type: "Routes" },
       ],
     }),
 
@@ -106,9 +108,9 @@ export const routesApi = createApi({
       }),
       invalidatesTags: (result, error, { routeId }) => [
         { type: "SavedItems", id: routeId },
+        { type: "Routes" },
       ],
     }),
-
     deleteSavedPlace: builder.mutation({
       query: ({ id, routeId, type }) => ({
         url: `/Saved/deletePlaces`,
@@ -120,13 +122,9 @@ export const routesApi = createApi({
       }),
       invalidatesTags: (result, error, { routeId }) => [
         { type: "SavedItems", id: routeId },
+        { type: "Routes" },
       ],
     }),
-
-
-
-
-
     updateRouteImage: builder.mutation({
       query: ({ id, imageUrl }) => ({
         url: `/route/updateImage`,
