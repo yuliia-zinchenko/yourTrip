@@ -180,6 +180,7 @@ export const SavedRoute = () => {
             )}
           </div>
         </div>
+
         <Section
           title="Saved Flights"
           items={savedFlights}
@@ -195,13 +196,16 @@ export const SavedRoute = () => {
             savedFlights[0]?.itineraries?.[0]?.segments?.slice(-1)[0]?.arrival
               ?.iataCode
           }
+          isCompleted={route.isCompleted}
         />
+
         <Section
           title="Saved Hotels"
           items={savedHotels}
           emptyLinkTo="/hotels"
           type="hotel"
           component={SavedHotelsSimpleList}
+          isCompleted={route.isCompleted}
         />
 
         <Section
@@ -211,6 +215,7 @@ export const SavedRoute = () => {
           type="place"
           hasSearched={true}
           state={{ from: currentLocation }}
+          isCompleted={route.isCompleted}
         />
         <div className={styles.buttonFinishDiv}>
           {route.isCompleted ? (

@@ -34,7 +34,10 @@ export const routesApi = createApi({
         method: "POST",
         body: { routeId, json: JSON.stringify(json) },
       }),
-      invalidatesTags: ["Routes"],
+      invalidatesTags: (result, error, { routeId }) => [
+        { type: "Routes" },
+        { type: "SavedItems", id: routeId },
+      ],
     }),
     addHotelToRoute: builder.mutation({
       query: ({ routeId, json }) => ({
@@ -42,7 +45,10 @@ export const routesApi = createApi({
         method: "POST",
         body: { routeId, json: JSON.stringify(json) },
       }),
-      invalidatesTags: ["Routes"],
+      invalidatesTags: (result, error, { routeId }) => [
+        { type: "Routes" },
+        { type: "SavedItems", id: routeId },
+      ],
     }),
     addTicketToRoute: builder.mutation({
       query: ({ routeId, json }) => ({
@@ -50,14 +56,17 @@ export const routesApi = createApi({
         method: "POST",
         body: { routeId, json: JSON.stringify(json) },
       }),
-      invalidatesTags: ["Routes"],
+      invalidatesTags: (result, error, { routeId }) => [
+        { type: "Routes" },
+        { type: "SavedItems", id: routeId },
+      ],
     }),
     deleteRoute: builder.mutation({
       query: (id) => ({
         url: `/route/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["Routes"],
+      invalidatesTags: ["Routes", "Achievements"],
     }),
     getSavedItemsByRoute: builder.query({
       query: (routeId) => `/route/showRoute?routeId=${routeId}`,
@@ -70,6 +79,7 @@ export const routesApi = createApi({
         method: "POST",
         body: { routeId, review, rating },
       }),
+      invalidatesTags: ["Routes", "Achievements"],
     }),
     updateRouteImage: builder.mutation({
       query: ({ id, imageUrl }) => ({
@@ -77,8 +87,11 @@ export const routesApi = createApi({
         method: "POST",
         params: { imageUrl, id },
       }),
+      invalidatesTags: (result, error, { id }) => [
+        { type: "Routes" },
+        { type: "SavedItems", id },
+      ],
     }),
-    invalidatesTags: ["Routes"],
   }),
 });
 

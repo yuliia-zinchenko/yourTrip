@@ -37,7 +37,7 @@ export const PlacesResults = ({ places, hasSearched, state }) => {
                 <div className={styles.noImage}>No Image</div>
               )}
               <div className={styles.cardTitle}>
-                {place.name}
+                {place.name} {place?.address}
               </div>
             </Link>
           ))}

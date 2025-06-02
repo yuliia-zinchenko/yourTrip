@@ -17,9 +17,12 @@ export const CompletedTrips = () => {
   };
 
   const routes = data?.data || [];
+
+  const completedRoutes = routes.filter((route) => route.isCompleted);
+
   return (
     <>
-      {routes.length !== 0 ? (
+      {completedRoutes.length !== 0 ? (
         <div>
           <h2 className={css.name}>Completed trips</h2>
           {isLoading ? (

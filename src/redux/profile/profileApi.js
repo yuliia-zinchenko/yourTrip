@@ -12,6 +12,7 @@ export const profileApi = createApi({
       return headers;
     },
   }),
+  tagTypes: ["Achievements"],
   endpoints: (builder) => ({
     getUserProfile: builder.query({
       query: () => "/Profile/Profile",
@@ -24,7 +25,15 @@ export const profileApi = createApi({
         method: "PUT",
       }),
     }),
+    getUserAchievements: builder.query({
+      query: () => "Achievement/show",
+      providesTags: ["Achievements"],
+    }),
   }),
 });
 
-export const { useGetUserProfileQuery, useRenameUserMutation } = profileApi;
+export const {
+  useGetUserProfileQuery,
+  useRenameUserMutation,
+  useGetUserAchievementsQuery,
+} = profileApi;

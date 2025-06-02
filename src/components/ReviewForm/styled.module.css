@@ -38,3 +38,12 @@
 .button:hover {
   background-color: #564d41;
 }
+
+.errorText {
+  color: rgb(234, 95, 95);
+  font-size: 14px;
+}
+
+.errorTextarea {
+  border: 1px solid red;
+}
