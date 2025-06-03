@@ -4,6 +4,9 @@ import { ReactComponent as Pencil } from "../../../icons/pencil.svg";
 import { ReactComponent as User } from "../../../icons/person-fill.svg";
 import { ReactComponent as Check } from "../../../icons/check-lg.svg";
 import { ReactComponent as Cancel } from "../../../icons/x.svg";
+import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setRole } from "../../../redux/auth/authSlice";
 
 import {
   useGetUserProfileQuery,
@@ -20,6 +23,14 @@ export const UserInfo = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [tempUsername, setTempUsername] = useState(username);
   const [renameError, setRenameError] = useState("");
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (data?.role) {
+      dispatch(setRole(data.role));
+    }
+  }, [data, dispatch]); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   const createdAt = data?.createdAt;
 
@@ -39,6 +50,9 @@ export const UserInfo = () => {
       setDate(formattedDate);
     }
   }, [data, formattedDate]);
+
+  const role = useSelector((state) => state.auth.role);
+  console.log("Redux role:", role);
 
   const handleSave = async () => {
     try {
@@ -113,6 +127,11 @@ export const UserInfo = () => {
             <p className={css.emailText}>{email}</p>
             <p className={css.dateText}>Created at: {date}</p>
           </div>
+          {Array.isArray(data.role) && data.role.includes("Admin") && (
+            <NavLink to="/admin" className={css.AdminButton}>
+              Admin Panel ⚙️
+            </NavLink>
+          )}
         </div>
       </div>
     </div>

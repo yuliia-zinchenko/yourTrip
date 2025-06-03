@@ -5,6 +5,8 @@ import { validateLogin } from "../../utils/validateLogin";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "../../redux/auth/authSlice";
 import { useNavigate } from "react-router-dom";
+import { routesApi } from "../../redux/routesApi/saveToRoute";
+import { profileApi } from "../../redux/profile/profileApi";
 
 export const LoginForm = ({ onSwitch, closeModal, redirectTo }) => {
   const [login, { isLoading }] = useLoginMutation();
@@ -24,6 +26,9 @@ export const LoginForm = ({ onSwitch, closeModal, redirectTo }) => {
     if (Object.keys(validationErrors).length === 0) {
       try {
         const response = await login({ email, password }).unwrap();
+        dispatch(routesApi.util.resetApiState());
+        dispatch(profileApi.util.resetApiState());
+
         dispatch(setCredentials(response));
         closeModal();
         if (redirectTo) {
