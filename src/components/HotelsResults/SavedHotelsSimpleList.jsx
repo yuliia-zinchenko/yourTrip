@@ -8,8 +8,8 @@ export const SavedHotelsSimpleList = ({ hotels, renderActions }) => {
     }
 
     return (
-        <div className={styles.resultsWrap}>
-            <div className={styles.list}>
+        <div >
+            <div >
                 {hotels.map((hotel) => (
                     <div className={styles.littleCard} key={hotel.hotel_id}>
                         <div className={styles.imgWrap}>
@@ -22,7 +22,7 @@ export const SavedHotelsSimpleList = ({ hotels, renderActions }) => {
                                 }}
                             />
                         </div>
-                        <div className={styles.content}>
+                        <div className={styles.contentHotels}>
                             <div className={styles.header}>
                                 <h2 className={styles.title}>{hotel.hotel_name}</h2>
                                 <div className={styles.locationRow}>
@@ -35,7 +35,7 @@ export const SavedHotelsSimpleList = ({ hotels, renderActions }) => {
                                 </div>
                             </div>
                             <div className={styles.cardFooter}>
-                                <div className={styles.actions}>
+                                <div className={styles.actionsLittle}>
                                     <a
                                         href={hotel.url}
                                         target="_blank"

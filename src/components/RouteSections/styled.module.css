@@ -1,3 +1,8 @@
+.content{
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
 .title {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -28,8 +33,9 @@
 .actionWrapper {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
-  width: 40px; /* або інше фіксоване значення */
+  width: 40px;
   height: 40px;
 }
 .actionWrapper:hover{
@@ -42,7 +48,25 @@
 }
 
 .emptyTicketCard{
+  margin-left: 0!important;
   margin-top: 10px;
   width: 600px!important;
   height: 100px;
 }
+
+.cardsWrapper {
+  display: flex!important;
+  flex-direction: row;
+}
+
+.cardList {
+  display: flex!important;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.ticketCard, .emptyTicketCard {
+  flex: 0 0 auto;
+}
+
+

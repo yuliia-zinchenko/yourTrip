@@ -10,23 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a58741cb-f05f-4835-8518-ae100870b03f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/NotFoundPage/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/NotFoundPage/styled.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EmptyCard/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EmptyCard/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HotelsResults/SavedHotelsSimpleList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HotelsResults/SavedHotelsSimpleList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HotelsResults/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HotelsResults/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlacesResults/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlacesResults/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PlacesResults/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlacesResults/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/CompletedTrips/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/CompletedTrips/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/CompletedTrips/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/CompletedTrips/styled.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RouteSections/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RouteSections/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RouteSections/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RouteSections/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TicketsResults/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketsResults/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SavedRoute/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SavedRoute/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SavedRoute/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SavedRoute/styled.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/routesApi/saveToRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/routesApi/saveToRoute.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +55,7 @@
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging dev__lera&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev__lera&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/arturrubachenko/uni/yourTrip/src/icons&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -100,7 +89,8 @@
       <workItem from="1747476312227" duration="28346000" />
       <workItem from="1747904790197" duration="16314000" />
       <workItem from="1748520126775" duration="11833000" />
-      <workItem from="1748862177611" duration="10360000" />
+      <workItem from="1748862177611" duration="11208000" />
+      <workItem from="1748956175935" duration="4570000" />
     </task>
     <servers />
   </component>

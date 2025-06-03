@@ -19,10 +19,8 @@
     border-radius: 20px;
     box-shadow: 0 4px 16px #e3dfd6;
     overflow: hidden;
-    align-items: stretch;
+    align-items: flex-start;
     padding: 0;
-    min-height: 250px;
-    max-width: 40%;
     margin-bottom: 24px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -33,11 +31,9 @@
 }
 
 .cardFooter{
-    margin-top: 70px;
-    justify-items: flex-end;
+    margin-top: 200px;
+    justify-items: flex-start;
 }
-
-
 
 .imgWrap {
     flex-shrink: 0;
@@ -67,6 +63,13 @@
     justify-content: flex-start;
     padding: 24px 16px 24px 0;
     min-width: 0;
+}
+.contentHotels{
+        width: 290px;
+        flex: 1;
+        display: flex;
+        padding: 24px 0 24px 0;
+        min-width: 0;
 }
 
 .title {
@@ -117,7 +120,16 @@
     align-items: center;
     gap: 24px;
     margin-top: auto;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+}
+
+.actionsLittle{
+    margin-right: 10px;
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: nowrap;
 }
 
 .bottom{
@@ -142,6 +154,7 @@
 }
 .detailsBtn:hover {
     box-shadow: 0 8px 24px #e3dfd6;
+    transform: scale(1.03);
 }
 
 .styled_detailsBtn__GQ6zO {

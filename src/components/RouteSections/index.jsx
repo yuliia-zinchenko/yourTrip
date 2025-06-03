@@ -60,6 +60,7 @@ export const Section = ({
             hasSearched={hasSearched}
             state={state}
             renderActions={renderActions}
+
           />
         );
       default:
@@ -68,9 +69,11 @@ export const Section = ({
   };
 
   return (
+      <div className={styles.content}>
     <div className={styles.section}>
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.cardsWrapper}>
+        <div className={styles.cardList}>
         {renderContent()}
         {type === "ticket" ? (
           <EmptyCard linkTo={emptyLinkTo} className={styles.emptyTicketCard} />
@@ -79,7 +82,9 @@ export const Section = ({
             <EmptyCard linkTo={emptyLinkTo} />
           )
         )}
+        </div>
       </div>
     </div>
+      </div>
   );
 };
