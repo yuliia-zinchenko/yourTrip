@@ -10,7 +10,7 @@
   background-color: #f9f6f2;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 0;
+  margin-left: 25px;
   margin-bottom: 20px;
   align-self: flex-start;
 }
