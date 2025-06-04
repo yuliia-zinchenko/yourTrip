@@ -11,11 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a58741cb-f05f-4835-8518-ae100870b03f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HotelsResults/SavedHotelsSimpleList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HotelsResults/SavedHotelsSimpleList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HotelsResults/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HotelsResults/styled.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlacesResults/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlacesResults/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PlacesResults/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlacesResults/styled.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RouteSections/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RouteSections/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RouteSections/styled.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RouteSections/styled.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RoutesResults/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RoutesResults/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SavedRoute/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SavedRoute/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +91,7 @@
       <workItem from="1747904790197" duration="16314000" />
       <workItem from="1748520126775" duration="11833000" />
       <workItem from="1748862177611" duration="11208000" />
-      <workItem from="1748956175935" duration="4570000" />
+      <workItem from="1748956175935" duration="9005000" />
     </task>
     <servers />
   </component>

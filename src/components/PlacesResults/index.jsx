@@ -33,13 +33,18 @@ export const PlacesResults = ({
                 state={state}
               >
                 {place.photoUrl ? (
-                  <img
-                    src={place.photoUrl}
-                    alt={place.name}
-                    className={styles.cardImage}
-                  />
+                    <img
+                        src={place.photoUrl || "https://placehold.co/300x300"}
+                        alt={place.name}
+                        className={styles.cardImage}
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = "https://placehold.co/300x300";
+                        }}
+                    />
+
                 ) : (
-                  <div className={styles.noImage}>No Image</div>
+                    <div className={styles.noImage}>No Image</div>
                 )}
                 <div className={styles.cardTitle}>
                   {place.name} {place?.address}
@@ -47,7 +52,7 @@ export const PlacesResults = ({
               </Link>
 
               {renderActions && (
-                <div className={styles.actions}>{renderActions(place)}</div>
+                  <div className={styles.actions}>{renderActions(place)}</div>
               )}
             </div>
           ))}
