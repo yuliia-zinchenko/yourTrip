@@ -237,6 +237,7 @@ export const SavedRoute = () => {
           }
           routeId={routeId}
           onDeleteItem={handleDeleteSavedItem}
+          isCompleted={route.isCompleted}
         />
 
         <Section
@@ -246,6 +247,7 @@ export const SavedRoute = () => {
           type="hotel"
           routeId={routeId}
           onDeleteItem={handleDeleteSavedItem}
+          isCompleted={route.isCompleted}
         />
 
         <Section
@@ -257,6 +259,7 @@ export const SavedRoute = () => {
           state={{ from: currentLocation }}
           routeId={routeId}
           onDeleteItem={handleDeleteSavedItem}
+          isCompleted={route.isCompleted}
         />
 
         <div className={styles.buttonFinishDiv}>

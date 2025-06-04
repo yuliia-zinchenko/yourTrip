@@ -19,7 +19,7 @@ export const Cards = ({ state }) => {
 
   const routes = data?.data || [];
   const activeRoutes = routes.filter((route) => route.isCompleted === false);
-
+console.log(routes);
   const handleArrowClick = (e, id) => {
     e.preventDefault();
     e.stopPropagation();
