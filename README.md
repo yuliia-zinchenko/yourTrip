@@ -1,6 +1,6 @@
 Web-додаток який дозволяє користувачам створювати власні маршрути подорожей, обираючи авіаквитки, готелі, цікаві місця та інші елементи мандрівки в одному місці.
 
-Порівняння з конкурентами : https://docs.google.com/document/d/1uRLFXj8r7TmJdN2XAUCeVge4NtJt-1-2C-hgYjpeFg0/edit?hl=uk&tab=t.0
+Порівняння з існуючими аналогами : https://docs.google.com/document/d/1uRLFXj8r7TmJdN2XAUCeVge4NtJt-1-2C-hgYjpeFg0/edit?hl=uk&tab=t.0
 
 Основні можливості:
  - Планування маршруту
