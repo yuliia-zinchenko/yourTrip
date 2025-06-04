@@ -29,6 +29,9 @@ export const profileApi = createApi({
       query: () => "Achievement/show",
       providesTags: ["Achievements"],
     }),
+    getSortedRoutes: builder.query({
+      query: () => "Admin/sortCompletedRoutes",
+    }),
   }),
 });
 
@@ -36,4 +39,5 @@ export const {
   useGetUserProfileQuery,
   useRenameUserMutation,
   useGetUserAchievementsQuery,
+  useGetSortedRoutesQuery,
 } = profileApi;
