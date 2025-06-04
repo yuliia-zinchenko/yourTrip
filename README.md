@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+Web-додаток який дозволяє користувачам створювати власні маршрути подорожей, обираючи авіаквитки, готелі, цікаві місця та інші елементи мандрівки в одному місці.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Порівняння з існуючими аналогами : https://docs.google.com/document/d/1uRLFXj8r7TmJdN2XAUCeVge4NtJt-1-2C-hgYjpeFg0/edit?hl=uk&tab=t.0
 
-## Available Scripts
+Основні можливості:
+ - Планування маршруту
+Створення персонального маршруту подорожі по містах/країнах.
+Додавання до маршруту обраних готелів, авіаквитків, локацій.
+ - Пошук авіаквитків
+Перегляд доступних рейсів між містами.
+Збереження обраного рейсу у маршрут.
+ - Пошук готелів
+Пошук готелів за містом, датою, рейтингом.
+Збереження у свій маршрут.
+Відкриття детальної інформації з зовнішнього джерела (booking).
+ - Місця для відвідування 
+Показ цікавих місць за пошуком.
+Збереження обраного у маршрут.
+ - Список маршрутів
+Перегляд збережених маршрутів.
+Можливість редагувати або видаляти елементи.
+Візуалізація місць на мапі.
+ - Особистий кабінет
+Реєстрація/логін користувача з підтвердженням на електронну пошту.
+Перегляд власних маршрутів.
 
-In the project directory, you can run:
+Впроваджені завдання з лабораторних 2 і 3:
 
-### `npm start`
+Лабораторна №2
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Описано 12 патернів:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Патерни створення:
+1.  Factory Pattern
+Створення об’єктів через функцію або обгортку, яка приховує деталі реалізації:
+createApi(...) створює фабрику, яка будує запити, endpoints, хендлери — тобто 
+повністю інкапсулює реалізацію API.
 
-### `npm test`
+2. Singleton Pattern
+Гарантує, що є тільки один екземпляр класу чи модуля:
+У Redux Toolkit store API-клієнт працює як сінглтон, бо використовується 
+однаково у всьому застосунку.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Lazy Loading (React.lazy + Suspense)
+Відкладене створення компонентів при потребі, зменшуючи початковий 
+обсяг завантаження.
 
-### `npm run build`
+Структурні патерни:
+1. Container / Presentational Components
+Розділення логіки (контейнер) і UI (презентаційний компонент).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Higher-Order Components (HOC)
+Обгортка компонента для додавання йому функціональності.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Render Props
+Компонент отримує функцію як проп і викликає її для рендеру.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Compound Components
+Компоненти працюють разом як єдине ціле, але можуть бути використані окремо.
+Для вкладених інтерфейсів: наприклад, Tabs, Dropdown, Modal, Form.Group.
 
-### `npm run eject`
+Поведінкові паттерни:
+1. Custom Hooks
+Повторне використання логіки у вигляді власних хуків (наприклад, для обробки форм, запитів, фільтрації, тощо).
+Наприклад, useDebounce() useCombinedSuggestions(), useCurrentUser(), useQueryParams()
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Controlled & Uncontrolled Components
+Controlled — стан керується React (через useState).
+Uncontrolled — стан керується DOM (через ref).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. State Reducer Pattern
+Керування станом компонента через ред'юсер.
+Наприклад, authSlice
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
