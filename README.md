@@ -1,6 +1,7 @@
 Web-додаток який дозволяє користувачам створювати власні маршрути подорожей, обираючи авіаквитки, готелі, цікаві місця та інші елементи мандрівки в одному місці.
 
 Порівняння з існуючими аналогами : https://docs.google.com/document/d/1uRLFXj8r7TmJdN2XAUCeVge4NtJt-1-2C-hgYjpeFg0/edit?hl=uk&tab=t.0
+Backend - https://github.com/Roshira/YourTrip
 
 Основні можливості:
  - Планування маршруту
